@@ -20,3 +20,6 @@ a.product:hover .go svg { transform: translateX(5px); }
 .product.soon { display: block; border-style: dashed; background: transparent; }
 .product.soon .product-body { padding: 36px 32px; }
 @media (max-width: 560px) { .product { grid-template-columns: 1fr; } .product-media { padding: 28px 28px 0; } .product-body { padding: 24px 28px 32px; } }
+.logo-wide { height: 26px !important; width: auto; }
+.site-footer img.logo-wide { height: 28px; }
+.product-brand { height: 22px; width: auto; filter: var(--logo-filter); margin-bottom: 14px; }
