@@ -184,6 +184,8 @@
 .card:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--blue) 60%, transparent); box-shadow: var(--shadow); }
 .card-media { padding: 26px 26px 0; height: 280px; overflow: hidden; background: linear-gradient(180deg, var(--surface-2), var(--surface)); display: grid; justify-items: center; align-items: start; }
 .card-media .device { width: 88%; }
+.card-media--icon { align-items: center; color: var(--blue); }
+.card-media--icon svg { width: 120px; height: 120px; opacity: 0.9; }
 .card-body { padding: 22px 24px 26px; }
 .card-body h3 { font-size: 1.25rem; margin-bottom: 8px; }
 .card-body p { color: var(--muted); font-size: 0.96rem; margin: 0 0 12px; line-height: 1.55; }

@@ -129,7 +129,7 @@
           </div>
           <div class="aud" role="listitem">
             <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg></div>
-            <div><h3>Service &amp; maintenance</h3><p>Automatic hardware discovery, wiring and fault analysis, a simulation mode, zone finder LEDs, reports and software updates by file.</p></div>
+            <div><h3>Service &amp; maintenance</h3><p>Automatic hardware discovery, wiring and fault analysis, zone finder LEDs, reports and software updates by file.</p></div>
           </div>
         </div>
       </div>
@@ -213,7 +213,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">Signature features</p>
       <h2 id="sig-title">What sets the G25 apart.</h2>
-      <p class="lead">Seven capabilities that change how a hot runner gets heated, connected and operated. Every screen on this page is a real capture from the G25 software.</p>
+      <p class="lead">Six capabilities that change how a hot runner gets heated, connected and operated. Every screen on this page is a real capture from the G25 software.</p>
     </div>
 
     <!-- 1 Even Heat -->
@@ -371,27 +371,7 @@
       <p class="note" style="text-align:center;margin-top:24px">Functions that need the controller’s physical USB ports, such as database backup and restore, stay on the panel itself.</p>
     </article>
 
-    <!-- 6 OMC -->
-    <article class="feature flip" id="omc">
-      <div class="feature-copy reveal">
-        <span class="feature-tag">Platform integration</span>
-        <h3>Hot runner control and motion control on one screen.</h3>
-        <p class="lead">The G25 can embed the One Motion Controller (OMC) platform directly in its user interface. Operators switch between temperature control and motion control within one application, without leaving the G25 screen.</p>
-        <ol class="how">
-          <li><span><strong>Activate it.</strong> Switch the integration on in Tools &amp; Diagnostics and enter the address of your motion controller.</span></li>
-          <li><span><strong>It appears inside the G25.</strong> The motion controller’s own user interface is shown inside the G25 screen.</span></li>
-          <li><span><strong>One login, one place.</strong> Hot runner and motion control sit side by side in the same navigation, so operators find both where they expect them.</span></li>
-        </ol>
-        <ul class="benefits"><li>One screen for both platforms</li><li>Same look and navigation</li></ul>
-      </div>
-      <div class="feature-visual reveal" style="--d:.1s">
-        <div class="single">
-          {{dev tools_and_diagnostics_econtrol|panel|Tools and diagnostics screen where the integrated motion controller view is activated|Activating the integrated motion controller (shown here under its earlier name, eControl)}}
-        </div>
-      </div>
-    </article>
-
-    <!-- 7 Materials -->
+    <!-- 6 Materials -->
     <article class="feature" id="materials">
       <div class="feature-copy reveal">
         <span class="feature-tag">Material database</span>
@@ -441,10 +421,12 @@
         <div class="card-media">{{dev qualification_page|panel|Qualification screen with a table of baseline power and resistance values per zone}}</div>
         <div class="card-body"><h3>Leak &amp; heater monitoring</h3><p>Qualify a good-part baseline. The G25 then watches power and heater resistance and warns early about plastic leaks and degrading heaters.</p><span class="go">Explore protection →</span></div>
       </a>
-      <a class="card reveal" href="#explore" data-open-tab="service" style="--d:.06s">
-        <div class="card-media">{{dev tools_and_diagnostics_simulation_mode|panel|Simulation settings screen of the G25}}</div>
-        <div class="card-body"><h3>Simulation mode</h3><p>Explore every screen, train operators and prepare molds without any hardware connected, then switch to production mode when you are ready.</p><span class="go">Explore commissioning →</span></div>
-      </a>
+      <div class="card reveal" style="--d:.06s">
+        <div class="card-media card-media--icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="24" width="92" height="64" rx="8"/><path d="M44 104h32M60 88v16"/><path d="M34 50h24M34 62h16"/><circle cx="82" cy="56" r="14"/><path d="M82 48v8l6 4"/></svg>
+        </div>
+        <div class="card-body"><h3>Integrated motion control</h3><p>The One Motion Controller (OMC) platform can be embedded in the G25 interface, so hot runner and motion control are operated from one application.</p></div>
+      </div>
       <a class="card reveal" href="#explore" data-open-tab="service" style="--d:.12s">
         <div class="card-media">{{dev commissioning_screen|panel|Initial controller configuration with language, units and keyboard layout selection}}</div>
         <div class="card-body"><h3>18 languages</h3><p>Operators work in their own language, from English, German and Chinese to Japanese, Korean, Polish, Czech and more, including on-screen keyboards.</p><span class="go">Explore commissioning →</span></div>
@@ -619,10 +601,9 @@
     <div class="tabpanel" role="tabpanel" id="panel-service" aria-labelledby="tab-service" hidden>
       <div>
         <h3>Commission fast. Keep it running.</h3>
-        <p class="lead">Set-up, simulation and service tools are part of the controller.</p>
+        <p class="lead">Set-up and service tools are part of the controller.</p>
         <ul class="tick">
           <li><strong>First start:</strong> create the administrator, choose units, language and defaults. Hardware discovery finds the control blocks automatically.</li>
-          <li><strong>Simulation mode</strong> lets you explore, train and prepare molds without hardware.</li>
           <li><strong>Find Zones</strong> cycles the LEDs of selected zones to verify the mapping between software zones and physical outputs.</li>
           <li><strong>Service page</strong> with system status, uptime and hardware information, exportable for support.</li>
           <li><strong>Updates by file</strong>, including offline sites, and <strong>user management</strong> with five security levels.</li>
@@ -631,7 +612,6 @@
       <div class="gallery">
         {{dev commissioning_screen|panel|First start configuration with administrator, units and language|First start}}
         {{dev commissioning_icms_in_progress|panel|Hardware discovery listing detected control blocks|Hardware discovery}}
-        {{dev tools_and_diagnostics_simulation_mode|panel|Simulation settings|Simulation mode}}
         {{dev tools_and_diagnostics_find_zones|panel|Find Zones tool with zone LED options|Find Zones}}
         {{dev tools_and_diagnostics_service|panel|Service page with system status and performance|Service page}}
         {{dev general_system_updates|panel|System updates screen with update from file|System updates}}

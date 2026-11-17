@@ -227,10 +227,6 @@
   0.36,
   0.68
  ],
- "tools_and_diagnostics_econtrol": [
-  0,
-  0.72
- ],
  "tools_and_diagnostics_export_import": [
   0.0,
   0.375
@@ -251,8 +247,8 @@
   0.0,
   0.601
  ],
- "tools_and_diagnostics_simulation_mode": [
-  0.0,
-  0.6875
+ "tools_and_diagnostics_econtrol": [
+  0,
+  0.72
  ]
 }
