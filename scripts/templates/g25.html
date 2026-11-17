@@ -16,7 +16,7 @@
   <link rel="preload" href="../assets/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/site.css?v=1794908585">
-  <link rel="stylesheet" href="assets/css/g25.css?v=1794908585">
+  <link rel="stylesheet" href="assets/css/g25.css?v=1794909327">
   <script>
     (function () {
       var d = document.documentElement;
@@ -241,11 +241,20 @@
     <div class="section-head reveal">
       <p class="eyebrow">Signature features</p>
       <h2 id="sig-title">What sets the G25 apart.</h2>
-      <p class="lead">Six things that change how you heat, connect and operate a hot runner. Every screen on this page is a real screenshot from the G25.</p>
+      <p class="lead">Six things that change how you heat, connect and operate a hot runner. Pick one to see how it works. Every screen on this page is a real screenshot from the G25.</p>
+    </div>
+
+    <div class="tabs sig-tabs" role="tablist" aria-label="Signature features">
+      <button class="pill" role="tab" id="sigtab-even-heat" aria-controls="even-heat" aria-selected="true">Even Heat &amp; Cool</button>
+      <button class="pill" role="tab" id="sigtab-sequences" aria-controls="sequences" aria-selected="false" tabindex="-1">Heating &amp; cooling steps</button>
+      <button class="pill" role="tab" id="sigtab-opcua" aria-controls="opcua" aria-selected="false" tabindex="-1">Machine connection</button>
+      <button class="pill" role="tab" id="sigtab-web-ui" aria-controls="web-ui" aria-selected="false" tabindex="-1">Touch screen</button>
+      <button class="pill" role="tab" id="sigtab-remote" aria-controls="remote" aria-selected="false" tabindex="-1">Any screen, anywhere</button>
+      <button class="pill" role="tab" id="sigtab-materials" aria-controls="materials" aria-selected="false" tabindex="-1">Plastics database</button>
     </div>
 
     <!-- 1 Even Heat -->
-    <article class="feature" id="even-heat">
+    <article class="feature sigpanel" id="even-heat" role="tabpanel" aria-labelledby="sigtab-even-heat">
       <div class="feature-copy reveal">
         <span class="feature-tag">Intelligent heating &amp; cooling</span>
         <h3>Even Heat &amp; Even Cool: every zone arrives together.</h3>
@@ -290,7 +299,7 @@
     </article>
 
     <!-- 2 Sequences -->
-    <article class="feature flip" id="sequences">
+    <article class="feature flip sigpanel" id="sequences" role="tabpanel" aria-labelledby="sigtab-sequences" hidden>
       <div class="feature-copy reveal">
         <span class="feature-tag">Programmable sequences</span>
         <h3>Heat-up and cool-down sequences you build once.</h3>
@@ -313,7 +322,7 @@
     </article>
 
     <!-- 3 OPC UA -->
-    <article class="feature" id="opcua">
+    <article class="feature sigpanel" id="opcua" role="tabpanel" aria-labelledby="sigtab-opcua" hidden>
       <div class="feature-copy reveal">
         <span class="feature-tag">Machine connectivity</span>
         <h3>OPC UA EUROMAP 82.2: speak your machine’s language.</h3>
@@ -337,7 +346,7 @@
     </article>
 
     <!-- 4 Web UI -->
-    <article class="feature flip" id="web-ui">
+    <article class="feature flip sigpanel" id="web-ui" role="tabpanel" aria-labelledby="sigtab-web-ui" hidden>
       <div class="feature-copy reveal">
         <span class="feature-tag">Modern user interface</span>
         <h3>A modern touch screen that feels like today’s software.</h3>
@@ -360,7 +369,7 @@
     </article>
 
     <!-- 5 Remote / external screens -->
-    <article class="feature" id="remote" style="display:block">
+    <article class="feature feature--wide sigpanel" id="remote" role="tabpanel" aria-labelledby="sigtab-remote" hidden>
       <div class="feature-copy reveal" style="max-width:820px;margin:0 auto 48px;text-align:center">
         <span class="feature-tag">Operate from anywhere</span>
         <h3>Put a G25 screen wherever you need one.</h3>
@@ -400,7 +409,7 @@
     </article>
 
     <!-- 6 Materials -->
-    <article class="feature" id="materials">
+    <article class="feature sigpanel" id="materials" role="tabpanel" aria-labelledby="sigtab-materials" hidden>
       <div class="feature-copy reveal">
         <span class="feature-tag">Material database</span>
         <h3>13,800+ plastics, one tap from the right settings.</h3>
@@ -695,6 +704,6 @@
   </div>
 </dialog>
 
-<script src="assets/js/g25.js?v=1794908585" defer></script>
+<script src="assets/js/g25.js?v=1794909327" defer></script>
 </body>
 </html>
