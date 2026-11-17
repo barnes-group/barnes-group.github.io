@@ -1,16 +1,17 @@
 /* Copyright (c) 2026 SPECTRIX. All rights reserved. */
-.hub-hero { padding: clamp(48px, 7vw, 96px) 0 clamp(24px, 4vw, 48px); background:
+.hub-hero { padding: clamp(40px, 5vw, 72px) 0 clamp(16px, 3vw, 32px); background:
   radial-gradient(800px 420px at 80% 0%, var(--glow), transparent 70%),
   radial-gradient(600px 300px at 0% 20%, rgba(244, 178, 35, 0.12), transparent 70%), var(--bg); }
-.hub-hero h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); max-width: 20ch; letter-spacing: -0.025em; }
+.hub-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); max-width: 22ch; letter-spacing: -0.025em; }
 .hub-hero .lead { max-width: 560px; }
 .hub-products { padding: 24px 0 clamp(72px, 10vw, 140px); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-.product { display: grid; grid-template-columns: 0.8fr 1fr; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(135deg, var(--surface-2), var(--surface)); text-decoration: none; color: inherit; overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px; align-items: stretch; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+.product { display: grid; grid-template-columns: 0.8fr 1fr; grid-template-rows: 1fr auto; align-items: center; gap: 0 12px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(135deg, var(--surface-2), var(--surface)); text-decoration: none; color: inherit; overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
 a.product:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--blue) 60%, transparent); box-shadow: var(--shadow); }
-.product-media { padding: 28px 0 0 28px; align-self: end; }
-.product-media img { width: 100%; max-width: 240px; margin-inline: auto; filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.45)); }
-.product-body { padding: 36px 32px 36px 12px; }
+.product-media { padding: 32px 0 24px 32px; align-self: center; }
+.product-media img { width: 100%; max-width: 230px; margin-inline: auto; filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.45)); }
+.product-body { padding: 32px 36px 24px 12px; }
 .product-body h2 { font-size: clamp(2.2rem, 4vw, 3rem); margin-bottom: 0.2em; }
 .product-body p { color: var(--muted); }
 .tag { display: inline-block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 10px; }
@@ -19,7 +20,8 @@ a.product:hover { transform: translateY(-5px); border-color: color-mix(in srgb, 
 a.product:hover .go svg { transform: translateX(5px); }
 .product.soon { display: block; border-style: dashed; background: transparent; }
 .product.soon .product-body { padding: 36px 32px; }
-@media (max-width: 560px) { .product { grid-template-columns: 1fr; } .product-media { padding: 28px 28px 0; } .product-body { padding: 24px 28px 32px; } }
+@media (max-width: 560px) { .product { grid-template-columns: 1fr; } .product-media { padding: 28px 28px 0; } .product-body { padding: 24px 28px 24px; } .product-foot { padding: 14px 28px; } }
 .logo-wide { height: 26px !important; width: auto; }
 .site-footer img.logo-wide { height: 28px; }
-.product-brand { height: 22px; width: auto; filter: var(--logo-filter); margin-bottom: 14px; }
+.product-foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; padding: 16px 32px; border-top: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 35%, transparent); font-size: 0.82rem; color: var(--muted); }
+.product-foot img { height: 20px; width: auto; filter: var(--logo-filter); }
