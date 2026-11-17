@@ -1,8 +1,8 @@
 /* Copyright (c) 2026 SPECTRIX. All rights reserved. */
-.hub-hero { padding: clamp(64px, 10vw, 140px) 0 clamp(32px, 5vw, 64px); background:
+.hub-hero { padding: clamp(48px, 7vw, 96px) 0 clamp(24px, 4vw, 48px); background:
   radial-gradient(800px 420px at 80% 0%, var(--glow), transparent 70%),
   radial-gradient(600px 300px at 0% 20%, rgba(244, 178, 35, 0.12), transparent 70%), var(--bg); }
-.hub-hero h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); max-width: 14ch; letter-spacing: -0.025em; }
+.hub-hero h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); max-width: 20ch; letter-spacing: -0.025em; }
 .hub-hero .lead { max-width: 560px; }
 .hub-products { padding: 24px 0 clamp(72px, 10vw, 140px); }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
