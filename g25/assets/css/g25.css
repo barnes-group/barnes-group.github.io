@@ -252,3 +252,7 @@ dialog.lightbox::backdrop { background: rgba(2, 8, 18, 0.88); backdrop-filter: b
 .no-js .sigpanel[hidden] { display: grid; }
 .no-js .feature--wide[hidden] { display: block; }
 .no-js .sig-tabs { display: none; }
+
+.icon-panel { width: min(100%, 360px); aspect-ratio: 1; display: grid; place-content: center; justify-items: center; gap: 18px; border-radius: 28px; border: 1px solid var(--line); background: linear-gradient(135deg, var(--surface-2), var(--surface)); color: var(--blue); box-shadow: var(--shadow); }
+.icon-panel svg { width: 62%; height: auto; }
+.icon-panel span { color: var(--muted); font-weight: 600; font-size: 0.95rem; }

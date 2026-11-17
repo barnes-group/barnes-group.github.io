@@ -97,7 +97,7 @@ p { margin: 0 0 1em; }
 :root[data-theme="light"] .theme-btn .sun { display: block; }
 :root[data-theme="light"] .theme-btn .moon { display: none; }
 
-@media (max-width: 1120px) {
+@media (max-width: 1240px) {
   .menu-btn { display: grid; margin-left: auto; }
   .nav:not(.nav-inline) {
     position: fixed; inset: var(--header-h) 0 auto 0; flex-direction: column; align-items: stretch; gap: 2px; padding: 14px 20px 22px;
@@ -109,7 +109,7 @@ p { margin: 0 0 1em; }
   .nav:not(.nav-inline) .icon-btn { align-self: flex-start; margin: 8px 0 0 8px; }
   .nav:not(.nav-inline) a.nav-cta { align-self: flex-start; margin: 8px 0 0 8px; padding: 12px 22px; }
 }
-@media (max-width: 1280px) { .brand .crumb { display: none; } }
+@media (max-width: 1400px) { .brand .crumb { display: none; } }
 
 /* Buttons ---------------------------------------------------------------- */
 .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 999px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid transparent; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; cursor: pointer; font-family: inherit; }

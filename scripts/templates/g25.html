@@ -16,7 +16,7 @@
   <link rel="preload" href="../assets/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/site.css?v=1794908585">
-  <link rel="stylesheet" href="assets/css/g25.css?v=1794909327">
+  <link rel="stylesheet" href="assets/css/g25.css?v=1794909523">
   <script>
     (function () {
       var d = document.documentElement;
@@ -45,9 +45,8 @@
     <nav class="nav" id="nav" aria-label="Page sections">
       <a href="#news">News</a>
       <a href="#overview">Overview</a>
-      <a href="#signature">Features</a>
-      <a href="#highlights">Highlights</a>
-      <a href="#explore">Explore</a>
+      <a href="#signature">Outstanding features</a>
+      <a href="#explore">More features</a>
       <a href="#contact">Contact</a>
       <a class="nav-cta" href="mailto:info@gammaflux.com?subject=G25%20demo%20request&body=Hello%2C%0A%0AI%20would%20like%20to%20book%20a%20demo%20of%20the%20G25.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0APreferred%20date%3A%0A">Book a demo</a>
       <button class="icon-btn theme-btn" type="button" aria-label="Toggle light and dark theme">
@@ -239,17 +238,18 @@
 <section class="section" id="signature" aria-labelledby="sig-title">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Signature features</p>
+      <p class="eyebrow">Outstanding features</p>
       <h2 id="sig-title">What sets the G25 apart.</h2>
-      <p class="lead">Six things that change how you heat, connect and operate a hot runner. Pick one to see how it works. Every screen on this page is a real screenshot from the G25.</p>
+      <p class="lead">Seven things that change how you heat, connect and operate a hot runner. Pick one to see how it works. Every screen on this page is a real screenshot from the G25.</p>
     </div>
 
-    <div class="tabs sig-tabs" role="tablist" aria-label="Signature features">
+    <div class="tabs sig-tabs" role="tablist" aria-label="Outstanding features">
       <button class="pill" role="tab" id="sigtab-even-heat" aria-controls="even-heat" aria-selected="true">Even Heat &amp; Cool</button>
       <button class="pill" role="tab" id="sigtab-sequences" aria-controls="sequences" aria-selected="false" tabindex="-1">Heating &amp; cooling steps</button>
       <button class="pill" role="tab" id="sigtab-opcua" aria-controls="opcua" aria-selected="false" tabindex="-1">Machine connection</button>
       <button class="pill" role="tab" id="sigtab-web-ui" aria-controls="web-ui" aria-selected="false" tabindex="-1">Touch screen</button>
       <button class="pill" role="tab" id="sigtab-remote" aria-controls="remote" aria-selected="false" tabindex="-1">Any screen, anywhere</button>
+      <button class="pill" role="tab" id="sigtab-omc" aria-controls="omc" aria-selected="false" tabindex="-1">Motion control</button>
       <button class="pill" role="tab" id="sigtab-materials" aria-controls="materials" aria-selected="false" tabindex="-1">Plastics database</button>
     </div>
 
@@ -408,7 +408,28 @@
       <p class="note" style="text-align:center;margin-top:24px">Functions that need the controller’s USB ports, such as database backup and restore, stay on the panel itself.</p>
     </article>
 
-    <!-- 6 Materials -->
+    <!-- 6 Motion control -->
+    <article class="feature flip sigpanel" id="omc" role="tabpanel" aria-labelledby="sigtab-omc" hidden>
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Platform integration</span>
+        <h3>Hot runner control and motion control on one screen.</h3>
+        <p class="lead">The G25 can show the One Motion Controller (OMC) right inside its own screen. Operators switch between temperature control and motion control within one application, without leaving the G25.</p>
+        <ol class="how">
+          <li><span><strong>Switch it on.</strong> Turn the integration on in Tools &amp; Diagnostics and enter the address of your motion controller.</span></li>
+          <li><span><strong>It appears inside the G25.</strong> The motion controller’s own user interface is shown within the G25 screen.</span></li>
+          <li><span><strong>One login, one place.</strong> Hot runner and motion control sit side by side in the same navigation, so operators find both where they expect them.</span></li>
+        </ol>
+        <ul class="benefits"><li>One screen for both platforms</li><li>Same look and navigation</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <div class="icon-panel" aria-hidden="true">
+          <svg viewBox="0 11 64 42" fill="currentColor"><path d="M61,29H59V26a1,1,0,0,0-1-1H56V21h4V19H56V18a3.009,3.009,0,0,0-3-3H22a3.009,3.009,0,0,0-3,3v7H16a1,1,0,0,0-1,1v3H11V27a1,1,0,0,0-1-1H3a1,1,0,0,0-1,1V37a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V35h4v3a1,1,0,0,0,1,1h3v7a3.009,3.009,0,0,0,3,3H53a3.009,3.009,0,0,0,3-3V45h4V43H56V39h2a1,1,0,0,0,1-1V35h2a1,1,0,0,0,1-1V30A1,1,0,0,0,61,29ZM9,36H4V35H9Zm0-3H4V31H9Zm0-4H4V28H9Zm6,4H11V31h4Zm4,4H17V27h2Zm27,2H25V25H46Zm0-16H24a1,1,0,0,0-1,1V40a1,1,0,0,0,1,1H46v6H22a1,1,0,0,1-1-1V18a1,1,0,0,1,1-1H46Zm8,23a1,1,0,0,1-1,1H48V17h5a1,1,0,0,1,1,1Zm3-9H56V27h1Zm3-4H59V31h1Z"/></svg>
+          <span>One Motion Controller</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7 Materials -->
     <article class="feature sigpanel" id="materials" role="tabpanel" aria-labelledby="sigtab-materials" hidden>
       <div class="feature-copy reveal">
         <span class="feature-tag">Material database</span>
@@ -433,50 +454,11 @@
   </div>
 </section>
 
-<!-- HIGHLIGHTS ------------------------------------------------------------- -->
-<section class="section alt" id="highlights" aria-labelledby="hl-title">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Also outstanding</p>
-      <h2 id="hl-title">More reasons the G25 earns its place on the tool.</h2>
-      <p class="lead">Six more things that set the G25 apart, all in the current software release.</p>
-    </div>
-    <div class="cards">
-      <a class="card reveal" href="#explore" data-open-tab="analysis">
-        <div class="card-media">{{dev mold_doctor_wiring_analysis_completed|panel|Mold Doctor wiring analysis results with zero faults}}</div>
-        <div class="card-body"><h3>Mold Doctor®</h3><p>Five built-in checks find cross-wired zones and faulty heaters or sensors, and compare today’s tool with a known-good reference.</p><span class="go">Explore analysis →</span></div>
-      </a>
-      <a class="card reveal" href="#explore" data-open-tab="setup" style="--d:.06s">
-        <div class="card-media">{{dev mold_wizard_discovery_completed|panel|Mold Wizard discovery results listing every detected zone with its type, temperature and current}}</div>
-        <div class="card-body"><h3>Guided Mold Wizard</h3><p>Zones are detected automatically, wiring is checked and your first process is created, all in one guided flow from power-on to production.</p><span class="go">Explore set-up →</span></div>
-      </a>
-      <a class="card reveal" href="#explore" data-open-tab="toolgraph" style="--d:.12s">
-        <div class="card-media">{{dev dashboard_tool_graphic_zones_moved|panel|Tool Graph: a photograph of a hot runner manifold with zone markers placed on it}}</div>
-        <div class="card-body"><h3>Tool Graph</h3><p>Put your zones on a picture of your own tool. See where each zone sits and what it is doing, without reading through a list.</p><span class="go">Explore Tool Graph →</span></div>
-      </a>
-      <a class="card reveal" href="#explore" data-open-tab="protect">
-        <div class="card-media">{{dev qualification_page|panel|Qualification screen with a table of baseline power and resistance values per zone}}</div>
-        <div class="card-body"><h3>Leak &amp; heater monitoring</h3><p>Record what a good production run looks like. The G25 then keeps watch and warns you early about plastic leaks and ageing heaters.</p><span class="go">Explore protection →</span></div>
-      </a>
-      <div class="card reveal" style="--d:.06s">
-        <div class="card-media card-media--icon" aria-hidden="true">
-          <svg viewBox="0 11 64 42" fill="currentColor"><path d="M61,29H59V26a1,1,0,0,0-1-1H56V21h4V19H56V18a3.009,3.009,0,0,0-3-3H22a3.009,3.009,0,0,0-3,3v7H16a1,1,0,0,0-1,1v3H11V27a1,1,0,0,0-1-1H3a1,1,0,0,0-1,1V37a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V35h4v3a1,1,0,0,0,1,1h3v7a3.009,3.009,0,0,0,3,3H53a3.009,3.009,0,0,0,3-3V45h4V43H56V39h2a1,1,0,0,0,1-1V35h2a1,1,0,0,0,1-1V30A1,1,0,0,0,61,29ZM9,36H4V35H9Zm0-3H4V31H9Zm0-4H4V28H9Zm6,4H11V31h4Zm4,4H17V27h2Zm27,2H25V25H46Zm0-16H24a1,1,0,0,0-1,1V40a1,1,0,0,0,1,1H46v6H22a1,1,0,0,1-1-1V18a1,1,0,0,1,1-1H46Zm8,23a1,1,0,0,1-1,1H48V17h5a1,1,0,0,1,1,1Zm3-9H56V27h1Zm3-4H59V31h1Z"/></svg>
-        </div>
-        <div class="card-body"><h3>Integrated motion control</h3><p>The One Motion Controller (OMC) can be shown inside the G25 screen, so hot runner and motion control are operated from one application.</p></div>
-      </div>
-      <a class="card reveal" href="#explore" data-open-tab="service" style="--d:.12s">
-        <div class="card-media">{{dev commissioning_screen|panel|Initial controller configuration with language, units and keyboard layout selection}}</div>
-        <div class="card-body"><h3>18 languages</h3><p>Operators work in their own language, from English, German and Chinese to Japanese, Korean, Polish, Czech and more, including the on-screen keyboard.</p><span class="go">Explore commissioning →</span></div>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- EXPLORER --------------------------------------------------------------- -->
 <section class="section" id="explore" aria-labelledby="explore-title">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Explore the system</p>
+      <p class="eyebrow">Explore more features</p>
       <h2 id="explore-title">Everything else you need, in one system.</h2>
       <p class="lead">From the first temperature setpoint to the last service report. Choose an area and tap any screenshot to enlarge it.</p>
     </div>
@@ -704,6 +686,6 @@
   </div>
 </dialog>
 
-<script src="assets/js/g25.js?v=1794909327" defer></script>
+<script src="assets/js/g25.js?v=1794909523" defer></script>
 </body>
 </html>

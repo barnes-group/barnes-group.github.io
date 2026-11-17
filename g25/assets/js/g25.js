@@ -34,7 +34,7 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 
   /* Scroll spy ---------------------------------------------------------- */
-  var spyMap = { news: 'news', overview: 'overview', how: 'overview', signature: 'signature', highlights: 'highlights', explore: 'explore', contact: 'contact' };
+  var spyMap = { news: 'news', overview: 'overview', how: 'overview', signature: 'signature', explore: 'explore', contact: 'contact' };
   if ('IntersectionObserver' in window) {
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
