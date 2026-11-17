@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>G25 Hot Runner Temperature Controller | Gammaflux by SPECTRIX</title>
+  <meta name="description" content="G25: hot runner temperature control with Even Heat, programmable heat-up and cool-down sequences, OPC UA EUROMAP 82.2, a modern web interface you can open on any tablet or browser, integrated motion control and a database of 13,800+ materials.">
+  <meta name="theme-color" content="#031327">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="G25 Hot Runner Temperature Controller">
+  <meta property="og:description" content="Precision hot runner control with Even Heat, sequences, OPC UA EUROMAP 82.2 and a web interface for any screen.">
+  <meta property="og:image" content="https://barnes-group.github.io/g25/assets/img/og-g25.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preload" href="../assets/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/g25.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.remove('no-js');
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      var q = /[?&]theme=(light|dark)/.exec(location.search);
+      if (q) t = q[1];
+      if (t !== 'light') t = 'dark';
+      d.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="All products">
+      <img src="../assets/img/brand/gammaflux-by-spectrix-light.png" alt="Gammaflux by SPECTRIX" width="869" height="179">
+      <span class="crumb"><b>G25</b> Hot runner controller</span>
+    </a>
+    <button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Page sections">
+      <a href="#overview">Overview</a>
+      <a href="#signature">Signature features</a>
+      <a href="#highlights">Also outstanding</a>
+      <a href="#explore">Explore</a>
+      <a href="#contact">Contact</a>
+      <button class="icon-btn theme-btn" type="button" aria-label="Toggle light and dark theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO ----------------------------------------------------------------- -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Hot runner temperature controller</p>
+      <h1 id="hero-title">Hot runner control that <span class="grad">follows you</span> around the plant.</h1>
+      <p class="lead">The G25 pairs proven PID2 temperature control with a modern touch interface you can open on any tablet or browser, a standard OPC UA EUROMAP 82.2 connection to your machine, and the diagnostic tools to get every mold running right.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#signature">See what sets it apart
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#overview">How the G25 works</a>
+      </div>
+      <ul class="chips" aria-label="Key facts">
+        <li>OPC UA EUROMAP 82.2</li>
+        <li>As many external screens as you need</li>
+        <li>13,800+ materials</li>
+        <li>18 interface languages</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-ring" aria-hidden="true"></div>
+      <img class="hero-render" src="assets/img/product/g25.webp" width="402" height="881" alt="The G25 controller: grey and blue cabinet on casters with a portrait touch display on a column">
+      <figure class="device hero-panel">
+        <div class="device__shell"><div class="device__screen" id="hero-rotator">
+          <img class="on" src="assets/img/screens/dashboard_all_zones_on-sm.webp" width="540" height="960" alt="G25 dashboard: twelve zone tiles showing temperatures with the message System is up to temperature" fetchpriority="high">
+          <img src="assets/img/screens/dashboard_line_chart-sm.webp" width="540" height="960" alt="G25 line chart of zone temperatures during a heat-up and cool-down cycle" loading="lazy">
+          <img src="assets/img/screens/mold_doctor_tda_completed-sm.webp" width="540" height="960" alt="G25 Mold Doctor thermodynamic analysis results listing power, resistance and heating rates per zone" loading="lazy">
+          <img src="assets/img/screens/dashboard_table-sm.webp" width="540" height="960" alt="G25 table view with per-zone temperature, power and resistance values" loading="lazy">
+        </div></div>
+      </figure>
+      <div class="hero-tablet">
+        {{dev critical_overtemp_alarm|tablet|G25 on a tablet showing a critical overtemperature alarm with the affected zone highlighted in red}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS ---------------------------------------------------------------- -->
+<section class="stats" aria-label="G25 at a glance">
+  <div class="wrap">
+    <ul>
+      <li class="reveal"><b>±<em data-count="0.05" data-dec="2">0.05</em> °C</b><span>steady-state control accuracy</span></li>
+      <li class="reveal" style="--d:.08s"><b><em data-count="20">20</em>×</b><span>process samples every second</span></li>
+      <li class="reveal" style="--d:.16s"><b>0–<em data-count="500">500</em> °C</b><span>operating range, J or K thermocouples</span></li>
+      <li class="reveal" style="--d:.24s"><b><em data-count="24">24</em></b><span>zones per control block, scalable by adding blocks</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- OVERVIEW ------------------------------------------------------------- -->
+<section class="section" id="overview" aria-labelledby="overview-title">
+  <div class="wrap">
+    <div class="overview-grid">
+      <div class="prose reveal">
+        <p class="eyebrow">Product overview</p>
+        <h2 id="overview-title" style="font-size:clamp(2rem,4.2vw,3.1rem)">One controller for everything a hot runner needs.</h2>
+        <p class="lead">The G25 is a zone-based temperature controller for injection molding hot runner systems. It heats, holds and protects every nozzle tip and manifold zone, and it gives your people the tools to set molds up fast and keep them healthy.</p>
+        <p>Each zone is regulated by the G25's own <strong>PID2 control algorithm</strong>, time-tested and proven on hot runner systems around the world. Outputs are <strong>phase-angle fired</strong>: the voltage to every heater is adjusted continuously from 0 to 240 V, instead of being switched fully on and off. The result is a very quiet temperature trace and gentler treatment of heaters.</p>
+        <p>You operate it on a <strong>Full HD touch display</strong> built into the cabinet, and on any other screen that can open a web page. Behind the interface sit a mold and process library, a material database, guided set-up wizards, analysis tools and a standard OPC UA interface to your machine.</p>
+        <div class="audience" role="list">
+          <div class="aud" role="listitem">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6"/></svg></div>
+            <div><h3>Operators</h3><p>Glanceable dashboards, one-touch heat-up and cool-down, boost and standby, and alarms that say exactly which zone needs attention.</p></div>
+          </div>
+          <div class="aud" role="listitem">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-7"/></svg></div>
+            <div><h3>Process engineers</h3><p>Guided mold and process set-up, programmable sequences, material-based setpoints, qualification and the Mold Doctor® analysis tools.</p></div>
+          </div>
+          <div class="aud" role="listitem">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg></div>
+            <div><h3>Service &amp; maintenance</h3><p>Automatic hardware discovery, wiring and fault analysis, a simulation mode, zone finder LEDs, reports and software updates by file.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="--d:.1s">
+        <table class="spec-table">
+          <caption>Key specifications</caption>
+          <tr><th>Control algorithm</th><td>G25 PID2: automatic, self-optimizing, with manual override</td></tr>
+          <tr><th>Output</th><td>Phase-angle fired, 0–240 VAC, 0.1 % resolution</td></tr>
+          <tr><th>Control accuracy</th><td>0.05 °C (0.1 °F) steady state</td></tr>
+          <tr><th>Calibration accuracy</th><td>0.1 °C (0.2 °F)</td></tr>
+          <tr><th>Thermocouples</th><td>Type J (standard) or K, field selectable</td></tr>
+          <tr><th>Output modules</th><td>2-zone 15 A card (4,080 W) or 1-zone 30 A card (8,000 W) at 240 VAC</td></tr>
+          <tr><th>Machine interfaces</th><td>OPC UA (EUROMAP 82.2) over two Ethernet ports; 24 VDC remote inputs and outputs</td></tr>
+          <tr><th>Display</th><td>Full HD touch panel, plus any web browser</td></tr>
+          <tr><th>Mains input</th><td>180–265 VAC, 3-phase delta or wye, 50/60 Hz</td></tr>
+          <tr><th>Units &amp; languages</th><td>°C or °F; 18 interface languages</td></tr>
+        </table>
+        <p class="note">Specifications as published in the G25 operator manual, software release 1.5.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE ---------------------------------------------------------- -->
+<section class="section alt" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">How it fits together</p>
+      <h2 id="how-title">A web-native controller, wired to your machine.</h2>
+      <p class="lead">The G25 runs its own web server. The touch panel is simply the first browser connected to it, which is why every other screen on your network can work exactly the same way.</p>
+    </div>
+    <div class="arch reveal">
+      <div class="arch-tier">
+        <h3>1 · Operate</h3>
+        <div class="arch-nodes">
+          <div class="node hl">G25 touch panel<small>Full HD, built into the cabinet</small></div>
+          <div class="node">Tablets<small>at the machine, in the aisle</small></div>
+          <div class="node">Laptops &amp; PCs<small>control room, process engineering</small></div>
+          <div class="node">Any further browser<small>add as many as you need</small></div>
+        </div>
+      </div>
+      <div class="arch-link"><span>Ethernet · web interface · user accounts</span></div>
+      <div class="arch-tier">
+        <h3>2 · G25 software</h3>
+        <div class="arch-nodes">
+          <div class="node blue">Web user interface<small>dashboards, wizards, tools</small></div>
+          <div class="node blue">Control logic<small>PID2 · Even Heat/Cool · sequences</small></div>
+          <div class="node blue">Mold, process &amp; material database<small>13,800+ materials</small></div>
+          <div class="node blue">Analysis<small>Mold Doctor® · qualification · reports</small></div>
+          <div class="node blue">OPC UA server<small>EUROMAP 82.2</small></div>
+          <div class="node blue">One Motion Controller view<small>embedded in the interface</small></div>
+        </div>
+      </div>
+      <div class="arch-link"><span>USB · internal communication</span></div>
+      <div class="arch-tier">
+        <h3>3 · Control blocks</h3>
+        <div class="arch-nodes">
+          <div class="node hl">Intelligent control module<small>manages up to 24 zones per block</small></div>
+          <div class="node">Thermocouple input cards<small>high-resolution J / K inputs</small></div>
+          <div class="node">Output modules<small>15 A and 30 A, phase-angle fired</small></div>
+          <div class="node">Hot runner zones<small>tips, manifolds, monitor zones</small></div>
+        </div>
+      </div>
+      <div class="arch-link"><span>OPC UA EUROMAP 82.2 · 24 V signals · analog &amp; remote I/O</span></div>
+      <div class="arch-tier">
+        <h3>4 · Machine &amp; plant</h3>
+        <div class="arch-nodes">
+          <div class="node">Injection molding machine<small>reads and commands the G25</small></div>
+          <div class="node">Digital machine signals<small>E-stop, inhibit, standby, sequence triggers, OK to run</small></div>
+          <div class="node">Analog inputs<small>e.g. cooling-water flow</small></div>
+          <div class="node">Remote I/O modules<small>extra signals where you need them</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE FEATURES ------------------------------------------------------ -->
+<section class="section" id="signature" aria-labelledby="sig-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Signature features</p>
+      <h2 id="sig-title">What sets the G25 apart.</h2>
+      <p class="lead">Seven capabilities that change how a hot runner gets heated, connected and operated. Every screen on this page is a real capture from the G25 software.</p>
+    </div>
+
+    <!-- 1 Even Heat -->
+    <article class="feature" id="even-heat">
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Intelligent heating &amp; cooling</span>
+        <h3>Even Heat &amp; Even Cool: every zone arrives together.</h3>
+        <p class="lead">Nozzle tips heat in moments while a heavy manifold needs minutes. Left alone, tips sit at full temperature waiting for the manifold. Even Heat holds the fast zones back so the whole group warms up together, and Even Cool does the same on the way down.</p>
+        <ol class="how">
+          <li><span><strong>Group your zones</strong>, for example tips and manifolds, with a few taps or by drag and drop.</span></li>
+          <li><span><strong>Switch on “Use Even Heat when heating”</strong> in the Mold Wizard or in the process settings.</span></li>
+          <li><span><strong>The G25 keeps the group level.</strong> During start-up every zone stays within 11 °C (20 °F) of the coldest zone in its group, so the tips are not at setpoint for a long time waiting for the manifold.</span></li>
+          <li><span><strong>Even Cool mirrors it.</strong> On cool-down all zones of the group stay within 11 °C (20 °F) of the hottest zone while the setpoints are lowered together.</span></li>
+        </ol>
+        <ul class="benefits"><li>Gentler on the plastic</li><li>Less time at temperature</li><li>Set per group, per process</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <div class="curve" id="curve">
+          <h4>The principle, schematic</h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <svg viewBox="0 0 300 200" role="img" aria-label="Schematic: without Even Heat the tip zone reaches setpoint long before the manifold">
+              <line class="axis" x1="20" y1="170" x2="290" y2="170"/><line class="axis" x1="20" y1="20" x2="20" y2="170"/>
+              <line x1="20" y1="40" x2="290" y2="40" stroke="var(--muted)" stroke-dasharray="4 5" opacity=".6"/>
+              <text class="txt" x="24" y="34">setpoint</text>
+              <rect x="108" y="40" width="162" height="12" fill="var(--accent)" opacity=".16"/>
+              <path class="draw" d="M20 168 C45 120 70 62 108 40 L270 40" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+              <path class="draw" d="M20 168 C110 164 190 122 270 40" fill="none" stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/>
+              <text class="txt" x="20" y="190">Without Even Heat</text>
+            </svg>
+            <svg viewBox="0 0 300 200" role="img" aria-label="Schematic: with Even Heat tip and manifold rise together and reach setpoint at the same time">
+              <line class="axis" x1="20" y1="170" x2="290" y2="170"/><line class="axis" x1="20" y1="20" x2="20" y2="170"/>
+              <line x1="20" y1="40" x2="290" y2="40" stroke="var(--muted)" stroke-dasharray="4 5" opacity=".6"/>
+              <text class="txt" x="24" y="34">setpoint</text>
+              <path class="draw" d="M20 168 C105 158 190 114 270 40" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+              <path class="draw" d="M20 168 C110 164 190 122 270 40" fill="none" stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/>
+              <text class="txt" x="20" y="190">With Even Heat</text>
+            </svg>
+          </div>
+          <div class="legend"><span><i style="background:var(--accent)"></i>Nozzle tip</span><span><i style="background:var(--blue)"></i>Manifold</span><span>Shaded: tip waits at full temperature</span></div>
+        </div>
+        <div class="pair">
+          {{dev process_wizard_heat_up|panel|Heating step of the process wizard with the option Use Even Heat when heating highlighted|Heating options: Even Heat, operator command or sequence}}
+          {{dev process_wizard_cool_down|panel|Cooling step of the process wizard with the option Cool down zones using Even Cool highlighted|Cooling options: Even Cool, operator command or sequence}}
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 Sequences -->
+    <article class="feature flip" id="sequences">
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Programmable sequences</span>
+        <h3>Heat-up and cool-down sequences you build once.</h3>
+        <p class="lead">Define up to four stages. Each stage switches chosen groups on, or off, and decides when the next stage is allowed to begin. The sequence is stored with the process, so every mold starts the way it should.</p>
+        <ol class="how">
+          <li><span><strong>Pick the groups for each stage.</strong> Manifolds first, then tips, then gate zones: your tool, your order.</span></li>
+          <li><span><strong>Set the release condition.</strong> Move on when the zones have reached a percentage of setpoint, are within a deviation of the soak temperature, or after a fixed time.</span></li>
+          <li><span><strong>Add soak time</strong> between stages and decide whether the stage heats to setpoint at its end.</span></li>
+          <li><span><strong>Start it your way.</strong> By touch, from a machine signal (Sequence Start and Sequence Cool trigger inputs) or, for heat-up, over OPC UA from the machine control.</span></li>
+        </ol>
+        <ul class="benefits"><li>1 to 4 stages</li><li>Heat-up and cool-down</li><li>Stored per process</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <div class="trio">
+          {{dev process_wizard_heat_up_seq_0|panel|Heat-up sequence editor, stage one: group selection and the condition for releasing the next stage|Stage 1: choose groups and release condition}}
+          {{dev process_wizard_heat_up_seq_1|panel|Heat-up sequence editor showing stage two and stage three with soak times|Stages 2 and 3 with soak times}}
+          {{dev process_wizard_cool_down_sequence|panel|Cool-down sequence editor with stage one and stage two|Cool-down sequences work the same way}}
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 OPC UA -->
+    <article class="feature" id="opcua">
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Machine connectivity</span>
+        <h3>OPC UA EUROMAP 82.2: speak your machine’s language.</h3>
+        <p class="lead">The G25 contains an OPC UA server for the EUROMAP 82.2 hot runner interface. A machine that supports the standard can see the controller, read its zones and command it, over ordinary Ethernet and without gateways.</p>
+        <ol class="how">
+          <li><span><strong>Connect and enable.</strong> Plug the machine network into one of the two Ethernet ports and switch OPC UA on under Settings.</span></li>
+          <li><span><strong>The machine finds the hot runner device</strong>, with its identification, configuration and every zone with temperature and status.</span></li>
+          <li><span><strong>The machine takes control when you want it to.</strong> It can start the heat-up sequence, boost selected zones, request standby and adjust zone settings.</span></li>
+          <li><span><strong>Alarms and diagnostics flow back.</strong> System alarms and analog-input alarms are reported to the machine, and every command it sends appears in the G25 activity log.</span></li>
+        </ol>
+        <div class="callout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Prefer wires?</b> The G25 also offers 24 VDC remote inputs and outputs for signals such as E-stop, control inhibit, standby, sequence triggers and “OK to run”.</span></div>
+        <ul class="benefits"><li>Open standard</li><li>Two Ethernet ports</li><li>Logged and secured by user</li></ul>
+        <p class="note">Support for the OPC UA interface on the machine side depends on your machine manufacturer.</p>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <div class="pair">
+          {{dev process_and_hardware_opcua_options|panel|OPC UA settings screen with the enable switch and connection details|Settings › OPC UA}}
+          {{dev tools_and_diagnostics_io_mapping|panel|Input and output mapping screen for the digital machine signals of a control block|Digital machine signals: mapping inputs and outputs}}
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 Web UI -->
+    <article class="feature flip" id="web-ui">
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Modern user interface</span>
+        <h3>A touch interface built on web technology.</h3>
+        <p class="lead">The G25 interface is a web application, designed touch-first. It feels like modern software, stays fluid with every zone updating live, and adapts to portrait and landscape displays.</p>
+        <ol class="how">
+          <li><span><strong>See your tool the way you need to.</strong> Switch between zone tiles, tables, bar charts, line charts, pilot charts and the Tool Graph with a single tap.</span></li>
+          <li><span><strong>Change what you mean to change.</strong> Select one zone, a group or every zone and edit setpoints on a purpose-built keypad, even when the setpoints differ.</span></li>
+          <li><span><strong>Group zones by drag and drop</strong> and rename them in plain language.</span></li>
+          <li><span><strong>Work in your language.</strong> The interface and its on-screen keyboards cover 18 languages, and five security levels show each person only the screens they may use.</span></li>
+        </ol>
+        <ul class="benefits"><li>Touch-first</li><li>Portrait &amp; landscape</li><li>Adjustable screen brightness</li><li>18 languages</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <div class="trio">
+          {{dev dashboard_zones_reaching_target|panel|Dashboard with zone tiles heating towards their target temperature|Zone tiles: live temperature, setpoint and output}}
+          {{dev dashboard_line_chart|panel|Line chart of zone temperatures over time|Line chart}}
+          {{dev dashboard_bar_chart|panel|Bar chart showing the temperature of every selected zone|Bar chart}}
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 Remote / external screens -->
+    <article class="feature" id="remote" style="display:block">
+      <div class="feature-copy reveal" style="max-width:820px;margin:0 auto 48px;text-align:center">
+        <span class="feature-tag">Operate from anywhere</span>
+        <h3>Put a G25 screen wherever you need one.</h3>
+        <p class="lead">Because the interface is a web application, every tablet, laptop or PC on the network becomes another G25 screen. Place as many external screens as you want, by the machine, in the control room or at the supervisor’s desk, and operate the controller remotely from any of them.</p>
+      </div>
+      <div class="stage-wrap reveal">
+        <div class="remote-stage" id="remote-stage">
+          <div class="dev-panel">
+            {{dev dashboard_zones_reaching_target|panel|The G25 touch panel in the cabinet||panel}}
+            <span class="dev-label">G25 touch panel<small>in the cabinet</small></span>
+          </div>
+          <div class="dev-tablet">
+            {{dev dashboard_line_chart|tablet|A tablet connected to the G25||tablet}}
+            <span class="dev-label">Tablet<small>at the machine</small></span>
+          </div>
+          <div class="dev-browser">
+            {{dev alarms|browser|A computer browser connected to the G25||browser|https://your-g25-address}}
+            <span class="dev-label">Laptop or PC browser<small>control room</small></span>
+          </div>
+        </div>
+        <div class="scenarios" role="group" aria-label="Choose a scenario">
+          <button class="pill" type="button" aria-pressed="true" data-scenario="0">Production</button>
+          <button class="pill" type="button" aria-pressed="false" data-scenario="1">Process engineering</button>
+          <button class="pill" type="button" aria-pressed="false" data-scenario="2">Maintenance</button>
+        </div>
+        <p class="stage-caption" id="stage-caption" aria-live="polite"></p>
+      </div>
+      <div class="facts">
+        <div class="fact reveal"><h4>No extra hardware</h4><p>Open the controller’s address in a browser. There is nothing to install on the tablet, laptop or PC.</p></div>
+        <div class="fact reveal" style="--d:.06s"><h4>Many screens at once</h4><p>The panel and any number of browsers can be connected at the same time, each with its own login, so several people can work with the controller side by side.</p></div>
+        <div class="fact reveal" style="--d:.12s"><h4>Operate, not just watch</h4><p>Remote users get the same interface as at the panel: set temperatures, start heating and cooling, run analyses, acknowledge alarms.</p></div>
+        <div class="fact reveal" style="--d:.18s"><h4>Secure by design</h4><p>Remote access requires a login, and the five security levels decide what each person can see and change.</p></div>
+        <div class="fact reveal" style="--d:.24s"><h4>Easy to find</h4><p>Use the controller’s IP address or network name. The G25 also announces itself on the network so it can be discovered.</p></div>
+        <div class="fact reveal" style="--d:.3s"><h4>Files travel with you</h4><p>Reports and exports download straight to the device you are using, and files can be uploaded from it.</p></div>
+      </div>
+      <p class="note" style="text-align:center;margin-top:24px">Functions that need the controller’s physical USB ports, such as database backup and restore, stay on the panel itself.</p>
+    </article>
+
+    <!-- 6 OMC -->
+    <article class="feature flip" id="omc">
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Platform integration</span>
+        <h3>Hot runner control and motion control on one screen.</h3>
+        <p class="lead">The G25 can embed the One Motion Controller (OMC) platform directly in its user interface. Operators switch between temperature control and motion control within one application, without leaving the G25 screen.</p>
+        <ol class="how">
+          <li><span><strong>Activate it.</strong> Switch the integration on in Tools &amp; Diagnostics and enter the address of your motion controller.</span></li>
+          <li><span><strong>It appears inside the G25.</strong> The motion controller’s own user interface is shown inside the G25 screen.</span></li>
+          <li><span><strong>One login, one place.</strong> Hot runner and motion control sit side by side in the same navigation, so operators find both where they expect them.</span></li>
+        </ol>
+        <ul class="benefits"><li>One screen for both platforms</li><li>Same look and navigation</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <div class="single">
+          {{dev tools_and_diagnostics_econtrol|panel|Tools and diagnostics screen where the integrated motion controller view is activated|Activating the integrated motion controller (shown here under its earlier name, eControl)}}
+        </div>
+      </div>
+    </article>
+
+    <!-- 7 Materials -->
+    <article class="feature" id="materials">
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Material database</span>
+        <h3>13,800+ materials, one tap from the right setpoints.</h3>
+        <p class="lead">The G25 ships with a material database of more than 13,800 grades from about 700 manufacturers. Pick the material and let the controller’s limits follow it.</p>
+        <ol class="how">
+          <li><span><strong>Search or filter.</strong> Find a grade by trade name or abbreviation, or narrow it down with the advanced search.</span></li>
+          <li><span><strong>Check the numbers.</strong> Melt temperature and the allowed minimum and maximum are shown before you commit.</span></li>
+          <li><span><strong>Apply it to all zones or a selection.</strong> The G25 uses the material’s properties to set temperature setpoints and alarm thresholds, so the process starts inside the safe window.</span></li>
+          <li><span><strong>Make it yours.</strong> Add custom materials for your own compounds, and import or export them between controllers.</span></li>
+        </ol>
+        <ul class="benefits"><li>13,800+ grades</li><li>Custom materials</li><li>Import &amp; export</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <div class="trio">
+          {{dev materials|panel|Material management screen with a searchable list of plastics, their melt temperature range and manufacturer|Search the material list}}
+          {{dev material_apply|panel|Apply Material dialog showing melt, minimum and maximum temperature of the selected material|Review and apply to zones}}
+          {{dev add_material_modal_filled|panel|Add Custom Material dialog with abbreviation, name, manufacturer and temperature limits filled in|Add your own materials}}
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS ------------------------------------------------------------- -->
+<section class="section alt" id="highlights" aria-labelledby="hl-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Also outstanding</p>
+      <h2 id="hl-title">More reasons the G25 earns its place on the tool.</h2>
+      <p class="lead">Six more capabilities that set the G25 apart, all available in the current software release.</p>
+    </div>
+    <div class="cards">
+      <a class="card reveal" href="#explore" data-open-tab="analysis">
+        <div class="card-media">{{dev mold_doctor_wiring_analysis_completed|panel|Mold Doctor wiring analysis results with zero faults}}</div>
+        <div class="card-body"><h3>Mold Doctor®</h3><p>Five built-in diagnostics find cross-wired zones, open or shorted heaters and thermocouples, and compare today’s tool against a known-good baseline.</p><span class="go">Explore analysis →</span></div>
+      </a>
+      <a class="card reveal" href="#explore" data-open-tab="setup" style="--d:.06s">
+        <div class="card-media">{{dev mold_wizard_discovery_completed|panel|Mold Wizard discovery results listing every detected zone with its type, temperature and current}}</div>
+        <div class="card-body"><h3>Guided Mold Wizard</h3><p>Zones are discovered automatically, wiring is verified and the first process is created, all in one guided flow from power-on to production.</p><span class="go">Explore set-up →</span></div>
+      </a>
+      <a class="card reveal" href="#explore" data-open-tab="toolgraph" style="--d:.12s">
+        <div class="card-media">{{dev dashboard_tool_graphic_zones_moved|panel|Tool Graph: a photograph of a hot runner manifold with zone markers placed on it}}</div>
+        <div class="card-body"><h3>Tool Graph</h3><p>Put your zones on a picture of your own tool. See where a zone sits and what it is doing without decoding a zone list.</p><span class="go">Explore Tool Graph →</span></div>
+      </a>
+      <a class="card reveal" href="#explore" data-open-tab="protect">
+        <div class="card-media">{{dev qualification_page|panel|Qualification screen with a table of baseline power and resistance values per zone}}</div>
+        <div class="card-body"><h3>Leak &amp; heater monitoring</h3><p>Qualify a good-part baseline. The G25 then watches power and heater resistance and warns early about plastic leaks and degrading heaters.</p><span class="go">Explore protection →</span></div>
+      </a>
+      <a class="card reveal" href="#explore" data-open-tab="service" style="--d:.06s">
+        <div class="card-media">{{dev tools_and_diagnostics_simulation_mode|panel|Simulation settings screen of the G25}}</div>
+        <div class="card-body"><h3>Simulation mode</h3><p>Explore every screen, train operators and prepare molds without any hardware connected, then switch to production mode when you are ready.</p><span class="go">Explore commissioning →</span></div>
+      </a>
+      <a class="card reveal" href="#explore" data-open-tab="service" style="--d:.12s">
+        <div class="card-media">{{dev commissioning_screen|panel|Initial controller configuration with language, units and keyboard layout selection}}</div>
+        <div class="card-body"><h3>18 languages</h3><p>Operators work in their own language, from English, German and Chinese to Japanese, Korean, Polish, Czech and more, including on-screen keyboards.</p><span class="go">Explore commissioning →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORER --------------------------------------------------------------- -->
+<section class="section" id="explore" aria-labelledby="explore-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Explore the system</p>
+      <h2 id="explore-title">Everything else you need, in one system.</h2>
+      <p class="lead">From the first temperature setpoint to the last service report. Choose an area and tap any screenshot to enlarge it.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="G25 capability areas">
+      <button class="pill" role="tab" id="tab-operate" aria-controls="panel-operate" aria-selected="true">Operate &amp; monitor</button>
+      <button class="pill" role="tab" id="tab-setup" aria-controls="panel-setup" aria-selected="false" tabindex="-1">Mold &amp; process set-up</button>
+      <button class="pill" role="tab" id="tab-analysis" aria-controls="panel-analysis" aria-selected="false" tabindex="-1">Mold Doctor®</button>
+      <button class="pill" role="tab" id="tab-protect" aria-controls="panel-protect" aria-selected="false" tabindex="-1">Qualification &amp; protection</button>
+      <button class="pill" role="tab" id="tab-toolgraph" aria-controls="panel-toolgraph" aria-selected="false" tabindex="-1">Tool Graph</button>
+      <button class="pill" role="tab" id="tab-io" aria-controls="panel-io" aria-selected="false" tabindex="-1">Analog &amp; remote I/O</button>
+      <button class="pill" role="tab" id="tab-reports" aria-controls="panel-reports" aria-selected="false" tabindex="-1">Reports &amp; data</button>
+      <button class="pill" role="tab" id="tab-service" aria-controls="panel-service" aria-selected="false" tabindex="-1">Commissioning &amp; service</button>
+    </div>
+
+    <div class="tabpanel active" role="tabpanel" id="panel-operate" aria-labelledby="tab-operate">
+      <div>
+        <h3>Monitor and control every zone.</h3>
+        <p class="lead">Zone-based temperature control with live status, setpoints and alarms for every operator.</p>
+        <ul class="tick">
+          <li><strong>Live zone tiles</strong> show actual temperature, setpoint, output and current at a glance.</li>
+          <li><strong>Many views of the same tool:</strong> tiles, tables, bar, line and pilot charts, and the Tool Graph.</li>
+          <li><strong>Edit setpoints</strong> for one zone, a group or everything, even when the setpoints differ.</li>
+          <li><strong>Boost</strong> clears cold slugs at start-up, <strong>Standby</strong> protects the material while the machine is idle, <strong>Trim</strong> applies a permanent offset.</li>
+          <li><strong>Clear alarms:</strong> a critical overtemperature turns the header red and names the zone.</li>
+        </ul>
+      </div>
+      <div class="gallery">
+        {{dev dashboard_zones_reaching_target|panel|Zone tiles heating towards their target|Zone tiles}}
+        {{dev dashboard_table|panel|Table view with temperature, power and resistance per zone|Table view}}
+        {{dev setpoint_change_some_zones_keypad|panel|Setpoint keypad open while several zones are selected|Setpoints with a keypad}}
+        {{dev boost_dialog|panel|Boost dialog with temperature, duration and recovery time|Boost}}
+        {{dev standby_dialog|panel|Standby dialog with standby setpoint and timeout|Standby}}
+        {{dev critical_overtemp_alarm|panel|Critical overtemperature alarm in the header with the affected zone highlighted|Critical alarm}}
+      </div>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-setup" aria-labelledby="tab-setup" hidden>
+      <div>
+        <h3>From a new mold to a running process in minutes.</h3>
+        <p class="lead">Mold and process management with reusable definitions, guided by wizards.</p>
+        <ul class="tick">
+          <li><strong>Mold Wizard</strong> walks through basic configuration and groups, automatic zone discovery, wiring analysis and the process wizard for heating, cooling and qualification.</li>
+          <li><strong>Quick Mold</strong> gets a simple tool running with a name and a temperature.</li>
+          <li><strong>Zone classes and groups:</strong> tip, manifold or monitor. Rename and regroup by drag and drop.</li>
+          <li><strong>Per-zone tuning</strong> with overrides for special cases.</li>
+          <li><strong>Reusable molds and processes:</strong> copy, edit, export and import, including molds from earlier Gammaflux controllers.</li>
+        </ul>
+      </div>
+      <div class="gallery">
+        {{dev mold_wizard|panel|First step of the Mold Wizard: mold name, thermocouple type and zone labels|Mold Wizard: basic configuration}}
+        {{dev mold_wizard_discovery_completed|panel|Zone discovery completed with every heater detected|Automatic zone discovery}}
+        {{dev quick_mold|panel|Create Mold and Process dialog for the Quick Mold method|Quick Mold}}
+        {{dev edit_zones_view|panel|Drag and drop editor for arranging zones into groups|Drag-and-drop grouping}}
+        {{dev configure_zones_tuning|panel|Per-zone tuning values, firing mode and calibration offset|Zone tuning}}
+      </div>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-analysis" aria-labelledby="tab-analysis" hidden>
+      <div>
+        <h3>Mold Doctor®: know your tool.</h3>
+        <p class="lead">Offline diagnostics that replace guesswork with data.</p>
+        <ul class="tick">
+          <li><strong>Fault Analysis</strong> finds open, reversed or shorted thermocouples, open or shorted heaters, open fuses and ground faults.</li>
+          <li><strong>Wiring Analysis</strong> clearly notifies you of mis-wired zones, along with thermocouple or heater problems.</li>
+          <li><strong>Thermodynamic Analysis</strong> records zone-by-zone resistance, power, heating and cooling rates and saves them.</li>
+          <li><strong>Historical comparison</strong> sets a known-good baseline against the current state of the tool.</li>
+          <li><strong>Tuning Wizard</strong> calculates tuning coefficients automatically. Every result can be saved as a report.</li>
+        </ul>
+      </div>
+      <div class="gallery">
+        {{dev mold_doctor|panel|Mold Doctor fault analysis start screen|Fault Analysis}}
+        {{dev mold_doctor_wiring_analysis_completed|panel|Wiring analysis completed with zero faults|Wiring Analysis}}
+        {{dev mold_doctor_tda_completed|panel|Thermodynamic analysis results listing power, resistance and heating and cooling rates|Thermodynamic Analysis}}
+        {{dev mold_doctor_historic_analysis_both_chosen|panel|Historical comparison of two analyses side by side|Historical comparison}}
+        {{dev mold_doctor_tuning_analysis|panel|Tuning Wizard results per zone|Tuning Wizard}}
+      </div>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-protect" aria-labelledby="tab-protect" hidden>
+      <div>
+        <h3>Qualify once. Be warned early.</h3>
+        <p class="lead">Process qualification captures what “good” looks like for your tool and keeps watching.</p>
+        <ul class="tick">
+          <li><strong>Qualification</strong> records reference power and heater resistance for every zone while you run good parts.</li>
+          <li><strong>Plastic leak detection</strong> alarms on elevated power demand compared with the reference.</li>
+          <li><strong>Heater resistance monitoring</strong> highlights degrading heaters before they fail.</li>
+          <li><strong>Material protection</strong> reacts when the machine stops cycling for too long, so material does not degrade in the tool.</li>
+          <li><strong>Ground fault protection and wet-heater bakeout</strong> bring damp heaters up gently on low voltage before full power is applied. You can also re-qualify just a subset of zones.</li>
+        </ul>
+      </div>
+      <div class="gallery">
+        {{dev qualification_page|panel|Qualification screen with reference values per zone|Qualification baseline}}
+        {{dev process_wizard_qualification_enabled|panel|Qualification settings: plastic leak detection, heater resistance monitor and material protection|Monitoring settings}}
+        {{dev leak_detection_alarm|panel|Leak detection alarm on ten zones in the header and zone tiles|Leak detection alarm}}
+        {{dev critical_overtemp_alarm|panel|Critical overtemperature alarm|Critical overtemperature}}
+      </div>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-toolgraph" aria-labelledby="tab-toolgraph" hidden>
+      <div>
+        <h3>Your tool, on screen.</h3>
+        <p class="lead">The Tool Graph links the controller to the documentation of your mold.</p>
+        <ul class="tick">
+          <li><strong>Add a picture</strong> of the tool, for example a photograph of the manifold, as a named view.</li>
+          <li><strong>Place the zones</strong> on it, where they physically are, and move them until they match.</li>
+          <li><strong>Keep several views</strong> per mold, each with its own picture and zone placement.</li>
+          <li><strong>Stored with the mold,</strong> so the right pictures are there whenever that mold is activated.</li>
+        </ul>
+      </div>
+      <div class="gallery">
+        {{dev dashboard_tool_graphic_zones_moved|panel|Tool Graph with a zone marker being moved onto the image|Placing zones on the tool picture}}
+        {{dev dashboard_tool_graphic_empty_edit_mode|panel|Tool Graph in edit mode with the manifold photograph|Edit mode}}
+      </div>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-io" aria-labelledby="tab-io" hidden>
+      <div>
+        <h3>See beyond temperature.</h3>
+        <p class="lead">Analog channels and remote I/O bring the rest of the process into the same screen.</p>
+        <ul class="tick">
+          <li><strong>Analog input modules</strong> measure additional values such as cooling-water flow, plotted live as bar or line charts.</li>
+          <li><strong>Per channel:</strong> name, unit, range, one- or two-point calibration and low and high alarms with selectable actions.</li>
+          <li><strong>Remote I/O modules</strong> add digital signals wherever you need them, from machine inputs to alarm outputs.</li>
+          <li><strong>Everything integrated:</strong> analog alarms appear in the alarm list and can be reported to the machine over OPC UA.</li>
+        </ul>
+      </div>
+      <div class="gallery">
+        {{dev analog_inputs_line_view|panel|Analog input line plot of four flow channels|Analog line plot}}
+        {{dev analog_inputs_bar_view|panel|Analog input bar view with channel ranges|Analog bar view}}
+        {{dev analog_inputs_channel_alarm_modal|panel|Channel configuration dialog with limits and alarm thresholds|Limits and alarms}}
+        {{dev process_and_hardware_analog_inputs|panel|Analog input module overview with channels, calibration and units|Module overview}}
+        {{dev process_and_hardware_remote_io_remote_io_expanded|panel|Remote I/O configuration with input and output actions|Remote I/O}}
+      </div>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-reports" aria-labelledby="tab-reports" hidden>
+      <div>
+        <h3>Data you can hand to anyone.</h3>
+        <p class="lead">Reports, history and exports for quality, maintenance and customers.</p>
+        <ul class="tick">
+          <li><strong>Process reports</strong> include setpoints, alarm thresholds, heat-up and cool-down sequences and qualification results.</li>
+          <li><strong>Analysis reports</strong> are saved from Mold Doctor® and can be reviewed and compared later.</li>
+          <li><strong>Historical data</strong> can be logged and shown in a configurable table.</li>
+          <li><strong>Activity log</strong> records who changed what and when, with filters and export.</li>
+          <li><strong>Export to USB</strong> as PDF or CSV, plus complete database backup and restore.</li>
+        </ul>
+      </div>
+      <div class="gallery">
+        {{dev report_view|panel|Analysis report with test results per zone|Analysis report}}
+        {{dev process_report_export_completed|panel|Process report exported successfully|Process report export}}
+        {{dev tools_and_diagnostics_historical_data|panel|Historical data settings and disk space|Historical data}}
+        {{dev data_table|panel|Data table with configurable columns for every zone|Data table}}
+        {{dev activity_log|panel|Activity log with user, time and description of each change|Activity log}}
+        {{dev tools_and_diagnostics_export_import|panel|Backup and restore of the database|Backup and restore}}
+      </div>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-service" aria-labelledby="tab-service" hidden>
+      <div>
+        <h3>Commission fast. Keep it running.</h3>
+        <p class="lead">Set-up, simulation and service tools are part of the controller.</p>
+        <ul class="tick">
+          <li><strong>First start:</strong> create the administrator, choose units, language and defaults. Hardware discovery finds the control blocks automatically.</li>
+          <li><strong>Simulation mode</strong> lets you explore, train and prepare molds without hardware.</li>
+          <li><strong>Find Zones</strong> cycles the LEDs of selected zones to verify the mapping between software zones and physical outputs.</li>
+          <li><strong>Service page</strong> with system status, uptime and hardware information, exportable for support.</li>
+          <li><strong>Updates by file</strong>, including offline sites, and <strong>user management</strong> with five security levels.</li>
+        </ul>
+      </div>
+      <div class="gallery">
+        {{dev commissioning_screen|panel|First start configuration with administrator, units and language|First start}}
+        {{dev commissioning_icms_in_progress|panel|Hardware discovery listing detected control blocks|Hardware discovery}}
+        {{dev tools_and_diagnostics_simulation_mode|panel|Simulation settings|Simulation mode}}
+        {{dev tools_and_diagnostics_find_zones|panel|Find Zones tool with zone LED options|Find Zones}}
+        {{dev tools_and_diagnostics_service|panel|Service page with system status and performance|Service page}}
+        {{dev general_system_updates|panel|System updates screen with update from file|System updates}}
+        {{dev manage_users|panel|User management with roles|User management}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT ---------------------------------------------------------------- -->
+<section class="section alt" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <p class="eyebrow">Talk to us</p>
+        <h2 id="contact-title">See the G25 on your tool.</h2>
+        <p class="lead">Ask for a demonstration, a quotation or a technical discussion about connecting the G25 to your machines. Every G25 also has the full operator manual built into its Help menu.</p>
+        <a class="btn btn-primary" href="https://www.gammaflux.com" rel="noopener">Visit gammaflux.com
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+      <div class="contacts">
+        <div class="contact"><b>North America</b>Gammaflux Controls · Livonia, MI<br><a href="mailto:info@gammaflux.com">info@gammaflux.com</a> · +1 800 367 5662</div>
+        <div class="contact"><b>Europe</b>GF Controls GmbH Gammaflux · Bahlingen a.K.<br><a href="mailto:info@gammaflux.de">info@gammaflux.de</a> · +49 7663 609 0</div>
+        <div class="contact"><b>Asia Pacific</b>Gammaflux Asia Pacific · Suzhou<br><a href="mailto:asia-pacific@gammaflux.com">asia-pacific@gammaflux.com</a> · +86 512 6283 8870</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <img src="../assets/img/brand/gammaflux-by-spectrix-light.png" alt="Gammaflux by SPECTRIX" width="869" height="179">
+      <small>© 2026 SPECTRIX. All rights reserved. G25 and Mold Doctor are trademarks of their respective owners. Screenshots are captures of the G25 software release 1.5 with demonstration data. Features and specifications may change; consult your Gammaflux representative for the configuration of your controller.</small>
+    </div>
+    <div>
+      <a href="../">All products</a> · <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot viewer">
+  <div class="lb">
+    <button class="lb-close" type="button" aria-label="Close">✕</button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous screenshot">‹</button>
+    <div class="lb-stage"><img alt="" src=""></div>
+    <button class="lb-btn lb-next" type="button" aria-label="Next screenshot">›</button>
+    <p class="lb-cap"></p>
+  </div>
+</dialog>
+
+<script src="assets/js/g25.js" defer></script>
+</body>
+</html>

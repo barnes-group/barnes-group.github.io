@@ -1,0 +1,258 @@
+{
+ "activity_log": [
+  0.0,
+  1.0
+ ],
+ "add_material_modal_filled": [
+  0.32,
+  0.74
+ ],
+ "alarms": [
+  0.0,
+  0.375
+ ],
+ "analog_inputs_bar_view": [
+  0.0,
+  0.4167
+ ],
+ "analog_inputs_channel_alarm_modal": [
+  0.3,
+  0.76
+ ],
+ "analog_inputs_line_view": [
+  0.0,
+  1.0
+ ],
+ "boost_dialog": [
+  0.38,
+  0.66
+ ],
+ "commissioning_icms_in_progress": [
+  0.0,
+  0.4729
+ ],
+ "commissioning_screen": [
+  0.0,
+  1.0
+ ],
+ "configure_zones_tuning": [
+  0.0,
+  0.4719
+ ],
+ "critical_overtemp_alarm": [
+  0.0,
+  0.375
+ ],
+ "dashboard_all_zones_on": [
+  0,
+  0.42
+ ],
+ "dashboard_bar_chart": [
+  0.0,
+  1.0
+ ],
+ "dashboard_line_chart": [
+  0.0,
+  1.0
+ ],
+ "dashboard_pilot_chart": [
+  0.0,
+  1.0
+ ],
+ "dashboard_table": [
+  0,
+  0.62
+ ],
+ "dashboard_tool_graphic_empty_edit_mode": [
+  0.0,
+  1.0
+ ],
+ "dashboard_tool_graphic_zones_moved": [
+  0.0,
+  1.0
+ ],
+ "dashboard_zones_reaching_target": [
+  0,
+  0.42
+ ],
+ "data_table": [
+  0.0,
+  0.6146
+ ],
+ "edit_zones_view": [
+  0.0,
+  0.4135
+ ],
+ "general_system_updates": [
+  0.0,
+  0.375
+ ],
+ "heating_complete": [
+  0.0,
+  0.375
+ ],
+ "leak_detection_alarm": [
+  0,
+  0.5
+ ],
+ "login_page": [
+  0.0,
+  0.7198
+ ],
+ "manage_users": [
+  0.0,
+  0.375
+ ],
+ "material_apply": [
+  0.34,
+  0.66
+ ],
+ "materials": [
+  0.0,
+  1.0
+ ],
+ "mold_doctor": [
+  0,
+  0.4
+ ],
+ "mold_doctor_fault_analysis_completed": [
+  0,
+  0.4
+ ],
+ "mold_doctor_historic_analysis_both_chosen": [
+  0,
+  0.55
+ ],
+ "mold_doctor_tda_completed": [
+  0,
+  0.5
+ ],
+ "mold_doctor_thermodynamic_analysis": [
+  0.0,
+  1.0
+ ],
+ "mold_doctor_tuning_analysis": [
+  0,
+  0.9
+ ],
+ "mold_doctor_wiring_analysis_completed": [
+  0,
+  0.4
+ ],
+ "mold_wizard": [
+  0,
+  0.55
+ ],
+ "mold_wizard_discovery_completed": [
+  0,
+  0.8
+ ],
+ "mold_wizard_start_wiring": [
+  0.0,
+  0.624
+ ],
+ "process_and_hardware_analog_inputs": [
+  0.0,
+  1.0
+ ],
+ "process_and_hardware_hardware_info": [
+  0.0,
+  1.0
+ ],
+ "process_and_hardware_opcua_options": [
+  0,
+  0.65
+ ],
+ "process_and_hardware_remote_io_remote_io_expanded": [
+  0,
+  0.45
+ ],
+ "process_edit_heating": [
+  0.0,
+  1.0
+ ],
+ "process_edit_qualification": [
+  0.0,
+  1.0
+ ],
+ "process_report_export_completed": [
+  0.0,
+  0.3823
+ ],
+ "process_wizard_cool_down": [
+  0.0,
+  0.4062
+ ],
+ "process_wizard_cool_down_sequence": [
+  0.0,
+  1.0
+ ],
+ "process_wizard_heat_up": [
+  0.0,
+  0.4062
+ ],
+ "process_wizard_heat_up_seq_0": [
+  0.0,
+  1.0
+ ],
+ "process_wizard_heat_up_seq_1": [
+  0.0,
+  1.0
+ ],
+ "process_wizard_qualification_enabled": [
+  0.0,
+  0.5875
+ ],
+ "qualification_page": [
+  0.0,
+  1.0
+ ],
+ "quick_mold": [
+  0.2,
+  0.64
+ ],
+ "report_view": [
+  0.0,
+  1.0
+ ],
+ "setpoint_change_some_zones_keypad": [
+  0.4,
+  0.92
+ ],
+ "settings_general": [
+  0.0,
+  1.0
+ ],
+ "standby_dialog": [
+  0.36,
+  0.68
+ ],
+ "tools_and_diagnostics_econtrol": [
+  0,
+  0.72
+ ],
+ "tools_and_diagnostics_export_import": [
+  0.0,
+  0.375
+ ],
+ "tools_and_diagnostics_find_zones": [
+  0.0,
+  0.3802
+ ],
+ "tools_and_diagnostics_historical_data": [
+  0,
+  0.62
+ ],
+ "tools_and_diagnostics_io_mapping": [
+  0.0,
+  0.4083
+ ],
+ "tools_and_diagnostics_service": [
+  0.0,
+  0.601
+ ],
+ "tools_and_diagnostics_simulation_mode": [
+  0.0,
+  0.6875
+ ]
+}
