@@ -237,7 +237,7 @@
             <svg viewBox="0 0 300 200" role="img" aria-label="Schematic: without Even Heat the tip zone reaches setpoint long before the manifold">
               <line class="axis" x1="20" y1="170" x2="290" y2="170"/><line class="axis" x1="20" y1="20" x2="20" y2="170"/>
               <line x1="20" y1="40" x2="290" y2="40" stroke="var(--muted)" stroke-dasharray="4 5" opacity=".6"/>
-              <text class="txt" x="24" y="34">setpoint</text>
+              <text class="txt" x="24" y="34">target</text>
               <rect x="108" y="40" width="162" height="12" fill="var(--accent)" opacity=".16"/>
               <path class="draw" d="M20 168 C45 120 70 62 108 40 L270 40" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
               <path class="draw" d="M20 168 C110 164 190 122 270 40" fill="none" stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/>
@@ -246,7 +246,7 @@
             <svg viewBox="0 0 300 200" role="img" aria-label="Schematic: with Even Heat tip and manifold rise together and reach setpoint at the same time">
               <line class="axis" x1="20" y1="170" x2="290" y2="170"/><line class="axis" x1="20" y1="20" x2="20" y2="170"/>
               <line x1="20" y1="40" x2="290" y2="40" stroke="var(--muted)" stroke-dasharray="4 5" opacity=".6"/>
-              <text class="txt" x="24" y="34">setpoint</text>
+              <text class="txt" x="24" y="34">target</text>
               <path class="draw" d="M20 168 C105 158 190 114 270 40" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
               <path class="draw" d="M20 168 C110 164 190 122 270 40" fill="none" stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/>
               <text class="txt" x="20" y="190">With Even Heat</text>
@@ -470,9 +470,9 @@
       <div class="gallery">
         {{dev dashboard_zones_reaching_target|panel|Zone tiles heating towards their target|Zone tiles}}
         {{dev dashboard_table|panel|Table view with temperature, power and resistance per zone|Table view}}
-        {{dev setpoint_change_some_zones_keypad|panel|Setpoint keypad open while several zones are selected|Setpoints with a keypad}}
+        {{dev setpoint_change_some_zones_keypad|panel|Temperature keypad open while several zones are selected|Entering temperatures}}
         {{dev boost_dialog|panel|Boost dialog with temperature, duration and recovery time|Boost}}
-        {{dev standby_dialog|panel|Standby dialog with standby setpoint and timeout|Standby}}
+        {{dev standby_dialog|panel|Standby dialog with standby temperature and timeout|Standby}}
         {{dev critical_overtemp_alarm|panel|Critical overtemperature alarm in the header with the affected zone highlighted|Critical alarm}}
       </div>
     </div>
