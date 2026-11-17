@@ -30,3 +30,4 @@ a.product:hover .go svg { transform: translateX(5px); }
 .site-footer .wrap { align-items: center; gap: 12px 32px; }
 .site-footer img.logo-wide { height: 20px; margin-bottom: 8px; }
 .site-footer small { max-width: none; }
+@media (max-width: 480px) { .nav-inline a:not(.nav-cta) { display: none; } .site-header .wrap { gap: 12px; } .logo-wide { height: 22px !important; } }
