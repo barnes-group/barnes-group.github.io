@@ -146,3 +146,7 @@ section { position: relative; }
 .site-footer small { display: block; max-width: 520px; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--text); }
+
+.btn-sm { padding: 9px 18px; font-size: 0.9rem; }
+.nav a.nav-cta { background: var(--accent); color: var(--on-accent); margin-left: 6px; }
+.nav a.nav-cta:hover { background: var(--accent); filter: brightness(1.08); }
