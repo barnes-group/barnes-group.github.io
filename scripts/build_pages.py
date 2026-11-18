@@ -74,10 +74,13 @@ PAGES = {
     "hub": ("", "/"),
     "g25": ("g25", "/g25/"),
     "moldmind": ("moldmind", "/moldmind/"),
+    "intelligate-p": ("intelligate-p", "/intelligate-p/"),
 }
 # Add a language: append it here, add its flag below and create scripts/i18n/<code>.json
 LANG_META = {"en": ("English", "GB"), "de": ("Deutsch", "DE"), "it": ("Italiano", "IT")}
 LANGS = [c for c in LANG_META if c != "en"]
+# Pages that exist only in some languages
+PAGE_LANGS = {"intelligate-p": ["en", "de"]}
 LANG_LABEL = {"en": "Language", "de": "Sprache", "it": "Lingua"}  # accessible name of the dropdown
 FLAGS = {
     "GB": '<svg viewBox="0 0 60 40" aria-hidden="true"><clipPath id="gb"><rect width="60" height="40" rx="4"/></clipPath><g clip-path="url(#gb)"><rect width="60" height="40" fill="#012169"/><path d="M0 0l60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0l60 40M60 0L0 40" stroke="#C8102E" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="13"/><path d="M30 0v40M0 20h60" stroke="#C8102E" stroke-width="7"/></g></svg>',
@@ -91,9 +94,10 @@ MAILTO = {"de": DE_MAILTO, "it": IT_MAILTO}
 # German pages link to German versions of the other pages
 def lang_links(name, lang):
     """Links between pages must stay inside the chosen language."""
-    return {"hub": [('href="../g25/"', f'href="../g25/{lang}/"'), ('href="../moldmind/"', f'href="../moldmind/{lang}/"')],
+    return {"hub": [('href="../g25/"', f'href="../g25/{lang}/"'), ('href="../moldmind/"', f'href="../moldmind/{lang}/"'), ] + ([('href="../intelligate-p/"', f'href="../intelligate-p/{lang}/"')] if lang in PAGE_LANGS["intelligate-p"] else []),
             "g25": [('href="../../"', f'href="../../{lang}/"')],
-            "moldmind": [('href="../../"', f'href="../../{lang}/"')]}.get(name, [])
+            "moldmind": [('href="../../"', f'href="../../{lang}/"')],
+            "intelligate-p": [('href="../../"', f'href="../../{lang}/"')]}.get(name, [])
 
 
 def asset_hash(page_dir, url):
@@ -126,16 +130,18 @@ def prefix_urls(text, prefix="../"):
 
 
 def finalize(text, tpl, lang, folder, path):
+    avail = {c: m for c, m in LANG_META.items() if c in PAGE_LANGS.get(tpl, LANG_META)}
+    langs = [c for c in avail if c != "en"]
     url = lambda c: BASE + path + ("" if c == "en" else c + "/")
     alt = f'<link rel="canonical" href="{url(lang)}">'
-    alt += "".join(f'<link rel="alternate" hreflang="{c}" href="{url(c)}">' for c in LANG_META)
+    alt += "".join(f'<link rel="alternate" hreflang="{c}" href="{url(c)}">' for c in avail)
     alt += f'<link rel="alternate" hreflang="x-default" href="{url("en")}">'
-    codes = json.dumps(LANGS)
+    codes = json.dumps(langs)
     redirect = ("<script>try{if(!localStorage.getItem('lang')){var l=(navigator.language||'').slice(0,2).toLowerCase();"
                 f"if({codes}.indexOf(l)>-1)location.replace(l+'/'+location.hash)}}}}catch(e){{}}</script>") if lang == "en" else ""
     text = text.replace("<!--LANG_HEAD-->", redirect + alt)
     items = []
-    for code, (label, flag) in LANG_META.items():
+    for code, (label, flag) in avail.items():
         if code == lang:
             href = "./"
         elif lang == "en":
@@ -162,7 +168,7 @@ def main():
         out = page_dir / "index.html"
         out.write_text(finalize(raw, name, "en", folder, path), encoding="utf-8")
         print("wrote", out.relative_to(ROOT))
-        for lang in LANGS:
+        for lang in [l for l in LANGS if l in PAGE_LANGS.get(name, LANGS)]:
             mapping = i18n.load(lang)
             missing = set()
             text = i18n.translate(raw.replace(EN_MAILTO, MAILTO[lang]), mapping, missing)
