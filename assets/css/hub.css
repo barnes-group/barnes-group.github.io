@@ -125,6 +125,3 @@ a.product--maenner:hover { box-shadow: 0 24px 50px -24px rgba(20, 24, 68, 0.8); 
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 html:is([lang="de"], [lang="it"]) .hub-hero h1 { font-size: clamp(2.3rem, 6vw, 4.8rem); }
-.product--wide { grid-column: 1 / -1; min-height: 0; }
-.product--wide .product-media img { height: 220px; width: auto; max-width: none; border-radius: 12px; background: #fff; padding: 6px; box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.55); }
-.product--wide .product-media { padding: 24px 0 24px 36px; text-align: center; }
