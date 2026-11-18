@@ -1,11 +1,11 @@
 # Context: G25 product website (barnes-group.github.io)
 
-Hand-over notes for continuing work in a new chat, for example to add another language. Ticket: G6P-3087 (customer-facing G25 product website).
+Hand-over notes for continuing work in a new chat, for example to add another language. Languages so far: English, German, Italian. Ticket: G6P-3087 (customer-facing G25 product website).
 
 ## Live site
 
-- https://barnes-group.github.io/ and /de/ : landing page in the SPECTRIX look (purple, Roboto Condensed). The G25 tile stays Gammaflux blue.
-- https://barnes-group.github.io/g25/ and /g25/de/ : G25 product page in the Gammaflux blue/dark look (Open Sans).
+- https://barnes-group.github.io/, /de/ and /it/ : landing page in the SPECTRIX look (purple, Roboto Condensed). The G25 tile stays Gammaflux blue.
+- https://barnes-group.github.io/g25/, /g25/de/ and /g25/it/ : G25 product page in the Gammaflux blue/dark look (Open Sans).
 - Repo: `barnes-group/barnes-group.github.io` (public), local clone `~/Documents/GitHub/barnes-group.github.io`. GitHub Pages serves `main` from the root. Pushing to `main` publishes within about 1 to 2 minutes.
 - The private G25 repo (`barnes-group/g6p`, local `~/Documents/GitHub/g6p`, branch `g6p-3087`) is the source of the screenshots, the operator manual and the release facts. Nothing for this ticket is committed there yet (see "Open items").
 
@@ -23,9 +23,9 @@ Plain static HTML/CSS/JS, no framework. Generated pages are committed; never edi
 
 ## How to add a language (for example French)
 
-1. In `scripts/build_pages.py` add the language to `LANG_META` (code: (native name, flag key)), add its accessible label to `LANG_LABEL`, and add an SVG flag to `FLAGS`. Also add a localised demo mailto next to `DE_MAILTO` and use it in `main()` (currently hard-wired to German for `de`; make it a dict by language). Update the `DE`-specific CSS in `assets/css/site.css` (`html[lang="de"]` rules: hides the header crumb below 1600 px and collapses the menu below 1300 px) for the new language if its labels are long.
+1. In `scripts/build_pages.py` add the language to `LANG_META` (code: (native name, flag key)), add its accessible label to `LANG_LABEL`, and add an SVG flag to `FLAGS`. Also add a localised demo mailto next to `DE_MAILTO`/`IT_MAILTO` and register it in the `MAILTO` dict. Update the language-specific CSS in `assets/css/site.css` (`html:is([lang="de"], [lang="it"])` rules: hides the header crumb below 1900 px and collapses the menu below 1300 px) for the new language if its labels are long.
 2. Generate the list of untranslated segments: `python3 scripts/i18n.py dump <code> index.html g25/index.html` (423 segments, ~25k characters). Translate them into `scripts/i18n/<code>.json` as `{english: translation}`. Use `scripts/i18n/de.json` as the reference for tone and for which terms stay English.
-3. `g25/assets/js/g25.js` has the scenario texts and image alt texts in code (`DE ? ... : ...`). Convert that to a per-language lookup and add the new language. Decimal separator for the count-up animation is also set there (`DE`). `build_pages.py` replaces `0.05` and `0.1 °C (0.2 °F)` with comma decimals for German; do the same where the language uses a comma.
+3. `g25/assets/js/g25.js` has the scenario texts and image alt texts in code (`pick({ de: ..., it: ... }, english)`); add the new language there. The count-up decimal separator is set there too (`COMMA`). `build_pages.py` replaces `0.05` and `0.1 °C (0.2 °F)` with comma decimals for `de` and `it`; extend that tuple for other comma languages. `main()` sets `lang` and `data-root` on the `<html>` tag of translated pages.
 4. Run the build, check that it reports no untranslated segments, check both pages at about 1440 px and at a narrow width, then commit and push.
 5. The dropdown, hreflang links, language redirect (browser language) and links between pages inside one language are generated automatically.
 
@@ -39,7 +39,8 @@ Plain static HTML/CSS/JS, no framework. Generated pages are committed; never edi
 
 - G25 page: dark Gammaflux blue by default, light theme available (toggle, `?theme=light|dark` for testing). Device frames use a concentric radius (screen radius = bezel radius minus bezel padding, set via `--ro` and `--bz` in `g25.css`).
 - Sections on the G25 page: News banner, Overview and specs, architecture diagram, "Outstanding features" (7 tabs: Even Heat/Cool, sequences, OPC UA, touch UI, remote screens, motion control, materials), "Explore more features" (8 tabs), manual download, contact. Tabs wrap onto a new line. `#<feature-id>` deep links open a tab (for example `#opcua`, `#omc`).
-- Book a demo = mailto link to `info@gammaflux.com` (the German page uses `info@gammaflux.de`). No separate support address was found online; gammaflux.com redirects to the SPECTRIX contact form.
+- The landing page has no "Book a demo" button; it lives only on the G25 page.
+- Book a demo = mailto link to `info@gammaflux.com` (the German page uses `info@gammaflux.de`, the Italian page `info@gammaflux.com` with Italian text). No separate support address was found online; gammaflux.com redirects to the SPECTRIX contact form.
 - Landing page footer links to spectrix.com. The Gammaflux by SPECTRIX logo is on the G25 tile and the G25 page.
 - Simulation mode was removed from the features on purpose. The motion controller (OMC) has no screenshot on purpose (the available one still says "eControl"); it uses the servo-drive icon from the G25 UI (`ui/app/src/components/IconSVG.svelte`).
 - Language dropdown uses inline SVG flags (no emoji, they do not render on Windows).
@@ -58,7 +59,7 @@ The screenshots come from `g6p/doc/manual/screenshots/en/en_<name>.png` (1080x19
 
 - `g6p` branch `g6p-3087` has no commits. Untracked there: `context.md` (not part of this work; it contains unrelated FillControl notes, leave it alone). The folder `doc/website/` with `prepare_screenshots.py` and `screens.txt` was lost or never created in the last step; recreate it if wanted.
 - The pull request for G6P-3087 (with the link https://barnes-group.github.io/g25/) is not created. The repo's PR skill requires: base `develop`, title starting with the ticket id, short body in the fixed format (Description / Major / Minor/Notes), no AI attribution, and the branch must be pushed first. The user decides when to commit and push.
-- German text was written without a native review; edits go in `scripts/i18n/de.json`.
+- German and Italian text were written without a native review; edits go in `scripts/i18n/de.json` and `scripts/i18n/it.json`.
 - The manual is English only.
 - Content wording on the landing page ("Six strong brands") paraphrases spectrix.com and should be confirmed.
 - All imagery and copy still need approval for external use (acceptance criterion of the ticket).

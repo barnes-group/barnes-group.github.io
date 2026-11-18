@@ -33,8 +33,6 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; margin: 0; }
 .hub-nav a { color: var(--ink); text-decoration: none; font-weight: 700; font-size: 1rem; padding: 8px 14px; border-radius: 999px; }
 .hub-nav a:hover { background: var(--grey); color: var(--purple); }
 .hub-nav .ext::after { content: " ↗"; font-weight: 400; }
-.hub-cta { align-self: stretch; display: flex; align-items: center; padding: 0 clamp(20px, 3vw, 40px); background: var(--purple); color: #fff; font-weight: 700; font-size: 1rem; text-decoration: none; }
-.hub-cta:hover { background: var(--purple-deep); color: #fff; }
 
 
 .lang-switch { position: relative; }
@@ -117,7 +115,6 @@ a.product:hover .go svg { transform: translateX(5px); }
   .product-media { padding: 28px 28px 0; }
   .product-media img { height: 220px; }
   .product-body { padding: 24px 28px 28px; }
-  .hub-cta { padding: 0 14px; font-size: 0.9rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-html[lang="de"] .hub-hero h1 { font-size: clamp(2.3rem, 6vw, 4.8rem); }
+html:is([lang="de"], [lang="it"]) .hub-hero h1 { font-size: clamp(2.3rem, 6vw, 4.8rem); }

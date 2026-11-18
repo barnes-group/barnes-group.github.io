@@ -75,15 +75,18 @@ PAGES = {
     "g25": ("g25", "/g25/"),
 }
 # Add a language: append it here, add its flag below and create scripts/i18n/<code>.json
-LANG_META = {"en": ("English", "GB"), "de": ("Deutsch", "DE")}
+LANG_META = {"en": ("English", "GB"), "de": ("Deutsch", "DE"), "it": ("Italiano", "IT")}
 LANGS = [c for c in LANG_META if c != "en"]
-LANG_LABEL = {"en": "Language", "de": "Sprache"}  # accessible name of the dropdown
+LANG_LABEL = {"en": "Language", "de": "Sprache", "it": "Lingua"}  # accessible name of the dropdown
 FLAGS = {
     "GB": '<svg viewBox="0 0 60 40" aria-hidden="true"><clipPath id="gb"><rect width="60" height="40" rx="4"/></clipPath><g clip-path="url(#gb)"><rect width="60" height="40" fill="#012169"/><path d="M0 0l60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0l60 40M60 0L0 40" stroke="#C8102E" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="13"/><path d="M30 0v40M0 20h60" stroke="#C8102E" stroke-width="7"/></g></svg>',
     "DE": '<svg viewBox="0 0 60 40" aria-hidden="true"><clipPath id="de"><rect width="60" height="40" rx="4"/></clipPath><g clip-path="url(#de)"><rect width="60" height="14" fill="#000"/><rect y="13" width="60" height="14" fill="#DD0000"/><rect y="26" width="60" height="14" fill="#FFCE00"/></g></svg>',
+    "IT": '<svg viewBox="0 0 60 40" aria-hidden="true"><clipPath id="it"><rect width="60" height="40" rx="4"/></clipPath><g clip-path="url(#it)"><rect width="20" height="40" fill="#009246"/><rect x="20" width="20" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#CE2B37"/></g></svg>',
 }
 EN_MAILTO = "mailto:info@gammaflux.com?subject=G25%20demo%20request&body=Hello%2C%0A%0AI%20would%20like%20to%20book%20a%20demo%20of%20the%20G25.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0APreferred%20date%3A%0A"
 DE_MAILTO = "mailto:info@gammaflux.de?subject=G25%20Demo-Anfrage&body=Guten%20Tag%2C%0A%0Aich%20m%C3%B6chte%20gerne%20eine%20Demo%20des%20G25%20buchen.%0A%0AName%3A%0AFirma%3A%0ATelefon%3A%0AWunschtermin%3A%0A"
+IT_MAILTO = "mailto:info@gammaflux.com?subject=Richiesta%20demo%20G25&body=Buongiorno%2C%0A%0Avorrei%20prenotare%20una%20demo%20del%20G25.%0A%0ANome%3A%0AAzienda%3A%0ATelefono%3A%0AData%20preferita%3A%0A"
+MAILTO = {"de": DE_MAILTO, "it": IT_MAILTO}
 # German pages link to German versions of the other pages
 def lang_links(name, lang):
     """Links between pages must stay inside the chosen language."""
@@ -160,11 +163,12 @@ def main():
         for lang in LANGS:
             mapping = i18n.load(lang)
             missing = set()
-            text = i18n.translate(raw.replace(EN_MAILTO, DE_MAILTO), mapping, missing)
+            text = i18n.translate(raw.replace(EN_MAILTO, MAILTO[lang]), mapping, missing)
             if missing:
                 print(f"  {lang}: {len(missing)} untranslated segments in {name}")
-            text = text.replace('<html lang="en"', f'<html lang="{lang}" data-root="../"', 1)
-            text = text.replace('data-dec="2">0.05<', 'data-dec="2">0,05<').replace('>0.1 °C (0.2 °F)<', '>0,1 °C (0,2 °F)<')
+            text = re.sub(r'<html\b[^>]*>', lambda m: m.group(0).replace('lang="en"', f'lang="{lang}" data-root="../"', 1), text, count=1)
+            if lang in ("de", "it"):
+                text = text.replace('data-dec="2">0.05<', 'data-dec="2">0,05<').replace('>0.1 °C (0.2 °F)<', '>0,1 °C (0,2 °F)<')
             text = prefix_urls(text)
             for a, b in lang_links(name, lang):
                 text = text.replace(a, b)
