@@ -132,7 +132,7 @@
 <tr><th>Funktion</th><td>Zykluszähler und Asset-Tracker für Spritzgießwerkzeuge</td></tr>
 <tr><th>Misst</th><td>Zyklen, Zykluszeit, Temperatur und Standort; erkennt die Entnahme aus dem Werkzeug</td></tr>
 <tr><th>Datenübertragung</th><td>LTE-M / NB-IoT an moldHUB, standardmäßig einmal pro Stunde</td></tr>
-<tr><th>Ohne Netz</th><td>Zyklenstand per NFC (13,56 MHz) mit einem Smartphone</td></tr>
+<tr><th>Ohne Netz</th><td>Zyklenstand per NFC (13,56 MHz): Das Smartphone leitet ihn an moldHUB weiter</td></tr>
 <tr><th>Stromversorgung</th><td>Zwei Li-Ion-Zellen (16340, 850 mAh), geladen über USB-C</td></tr>
 <tr><th>Akkulaufzeit</th><td>Mehrere Monate</td></tr>
 <tr><th>Gehäuse</th><td>Nylon, 85 × 38 × 45,6 mm, IP5X</td></tr>
@@ -181,7 +181,7 @@
 <div class="node hl">Smartphone oder Tablet<small>moldHUB als App installieren</small></div>
 <div class="node">Laptop oder PC<small>Chrome, Firefox oder Safari</small></div>
 <div class="node">Benachrichtigungen<small>in der App und per E-Mail</small></div>
-<div class="node">Smartphone mit NFC<small>liest den Zyklenstand am Werkzeug, ohne Netz</small></div>
+<div class="node">Smartphone mit NFC<small>liest den Zyklenstand am Werkzeug und leitet ihn an moldHUB weiter</small></div>
 </div>
 </div>
 </div>
@@ -214,6 +214,7 @@
 <li><span><strong>Werkzeug einmal schließen.</strong> Eine blaue LED blinkt kurz. Das bestätigt, dass der Zyklusstift richtig bewegt wird.</span></li>
 <li><span><strong>In moldHUB mit dem Werkzeug verknüpfen.</strong> Per NFC, Seriennummer oder QR-Code.</span></li>
 <li><span><strong>Daten lesen.</strong> Das Gerät sendet Zyklenstand, Zykluszeit, Temperatur und Standort standardmäßig einmal pro Stunde an moldHUB.</span></li>
+<li><span><strong>Kein Netz oder Akku schwach?</strong> Halten Sie Ihr Smartphone an das NFC-Logo am Gerät. Das Smartphone liest den Zyklenstand und leitet ihn an moldHUB weiter.</span></li>
 </ol>
 <ul class="benefits"><li>Keine Verkabelung zur Maschine</li><li>Zählt auch ohne Netz</li><li>Akku hält mehrere Monate</li></ul>
 </div>
@@ -341,7 +342,7 @@
 <div class="section-head reveal">
 <p class="eyebrow">Das Gerät</p>
 <h2 id="device-title">Klein genug für eine Tasche im Werkzeug.</h2>
-<p class="lead">Der moldMIND X wird in einer Tasche des Werkzeugs installiert. Er braucht keine Kabel zur Maschine und kein Display: Die Ergebnisse sehen Sie in moldHUB.</p>
+<p class="lead">Der moldMIND X wird in einer Tasche des Werkzeugs installiert. Er passt auch in die vorhandenen Taschen klassischer mechanischer Zykluszähler, sodass Sie Werkzeuge, die Sie bereits haben, nachrüsten können. Er braucht keine Kabel zur Maschine und kein Display: Die Ergebnisse sehen Sie in moldHUB.</p>
 </div>
 <div class="device-grid">
 <div class="reveal">
@@ -375,7 +376,7 @@
 </div>
 <div class="facts">
 <div class="fact reveal"><h4>Laden über USB-C</h4><p>Schließen Sie ein USB-C-Kabel und ein Ladegerät mit bis zu 1 A an. Eine Ladung dauert typischerweise weniger als 30 Minuten.</p></div>
-<div class="fact reveal" style="--d:.06s"><h4>Auslesen per NFC</h4><p>Halten Sie ein Smartphone an den NFC-Bereich, um den Zyklenstand zu lesen, auch dort, wo es kein Mobilfunknetz gibt. Der Wert wird mindestens einmal pro Stunde aktualisiert.</p></div>
+<div class="fact reveal" style="--d:.06s"><h4>Auslesen per NFC</h4><p>Halten Sie Ihr Smartphone an das NFC-Logo am Gerät. Das Smartphone liest den Zyklenstand und leitet ihn an moldHUB weiter, sodass die Daten auch dann ankommen, wenn das Gerät keinen Mobilfunkempfang hat oder der Akku schwach ist. Der Wert im Gerät wird mindestens einmal pro Stunde aktualisiert.</p></div>
 <div class="fact reveal" style="--d:.12s"><h4>Update über USB-C</h4><p>Neue Firmware kommt als Datei von Männer und wird über den USB-C-Anschluss auf das Gerät kopiert.</p></div>
 </div>
 </div>

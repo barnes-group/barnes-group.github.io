@@ -138,7 +138,7 @@
           <tr><th>Function</th><td>Cycle counter and asset tracker for injection molds</td></tr>
           <tr><th>Measures</th><td>Cycles, cycle time, temperature and location; notices removal from the mold</td></tr>
           <tr><th>Data transfer</th><td>LTE-M / NB-IoT to moldHUB, by default once per hour</td></tr>
-          <tr><th>Without network</th><td>Cycle count by NFC (13.56 MHz) with a smartphone</td></tr>
+          <tr><th>Without network</th><td>Cycle count by NFC (13.56 MHz): the smartphone passes it on to moldHUB</td></tr>
           <tr><th>Power</th><td>Two Li-Ion cells (16340, 850 mAh), charged by USB-C</td></tr>
           <tr><th>Battery life</th><td>Several months</td></tr>
           <tr><th>Housing</th><td>Nylon, 85 × 38 × 45.6 mm, IP5X</td></tr>
@@ -188,7 +188,7 @@
           <div class="node hl">Phone or tablet<small>install moldHUB as an app</small></div>
           <div class="node">Laptop or PC<small>Chrome, Firefox or Safari</small></div>
           <div class="node">Alerts<small>in the app and by e-mail</small></div>
-          <div class="node">Smartphone with NFC<small>reads the cycle count at the mold, without network</small></div>
+          <div class="node">Smartphone with NFC<small>reads the cycle count at the mold and passes it on to moldHUB</small></div>
         </div>
       </div>
     </div>
@@ -224,6 +224,7 @@
           <li><span><strong>Close the mold once.</strong> A blue LED flashes briefly. This confirms that the cycle pin is moved correctly.</span></li>
           <li><span><strong>Link it to the mold in moldHUB.</strong> Use NFC, the serial number or a QR code.</span></li>
           <li><span><strong>Read the data.</strong> The device sends the cycle count, cycle time, temperature and location to moldHUB, by default once per hour.</span></li>
+          <li><span><strong>No network or low battery?</strong> Hold your smartphone to the NFC logo on the device. The phone reads the cycle count and passes it on to moldHUB.</span></li>
         </ol>
         <ul class="benefits"><li>No wiring to the machine</li><li>Counts without network</li><li>Battery lasts several months</li></ul>
       </div>
@@ -357,7 +358,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">The device</p>
       <h2 id="device-title">Small enough for a pocket in the mold.</h2>
-      <p class="lead">The moldMIND X is installed in a pocket of the mold. It needs no cables to the machine and no display: moldHUB is where you see the results.</p>
+      <p class="lead">The moldMIND X is installed in a pocket of the mold. It also fits the existing pockets of classic mechanical cycle counters, so you can retrofit molds you already have. It needs no cables to the machine and no display: moldHUB is where you see the results.</p>
     </div>
     <div class="device-grid">
       <div class="reveal">
@@ -391,7 +392,7 @@
     </div>
     <div class="facts">
       <div class="fact reveal"><h4>Charge by USB-C</h4><p>Connect a USB-C cable and a charger of up to 1 A. A charge typically takes less than 30 minutes.</p></div>
-      <div class="fact reveal" style="--d:.06s"><h4>Read it by NFC</h4><p>Hold a smartphone to the NFC area to read the cycle count, also where there is no mobile network. The value is updated at least once per hour.</p></div>
+      <div class="fact reveal" style="--d:.06s"><h4>Read it by NFC</h4><p>Hold your smartphone to the NFC logo on the device. The phone reads the cycle count and passes it on to moldHUB, so the data arrives even when the device has no mobile reception or the battery is low. The value on the device is updated at least once per hour.</p></div>
       <div class="fact reveal" style="--d:.12s"><h4>Update over USB-C</h4><p>New firmware comes as a file from Männer and is copied to the device over the USB-C port.</p></div>
     </div>
   </div>

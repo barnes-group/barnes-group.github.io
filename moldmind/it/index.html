@@ -132,7 +132,7 @@
 <tr><th>Funzione</th><td>Contacicli e asset tracker per stampi a iniezione</td></tr>
 <tr><th>Misura</th><td>Cicli, tempo di ciclo, temperatura e posizione; riconosce la rimozione dallo stampo</td></tr>
 <tr><th>Trasmissione dei dati</th><td>LTE-M / NB-IoT verso moldHUB, per impostazione predefinita una volta all’ora</td></tr>
-<tr><th>Senza rete</th><td>Numero di cicli tramite NFC (13,56 MHz) con uno smartphone</td></tr>
+<tr><th>Senza rete</th><td>Numero di cicli tramite NFC (13,56 MHz): lo smartphone lo inoltra a moldHUB</td></tr>
 <tr><th>Alimentazione</th><td>Due celle Li-Ion (16340, 850 mAh), ricaricate tramite USB-C</td></tr>
 <tr><th>Autonomia della batteria</th><td>Diversi mesi</td></tr>
 <tr><th>Alloggiamento</th><td>Nylon, 85 × 38 × 45,6 mm, IP5X</td></tr>
@@ -181,7 +181,7 @@
 <div class="node hl">Smartphone o tablet<small>installate moldHUB come app</small></div>
 <div class="node">Laptop o PC<small>Chrome, Firefox o Safari</small></div>
 <div class="node">Notifiche<small>nell’app e via e-mail</small></div>
-<div class="node">Smartphone con NFC<small>legge il numero di cicli sullo stampo, senza rete</small></div>
+<div class="node">Smartphone con NFC<small>legge il numero di cicli sullo stampo e lo inoltra a moldHUB</small></div>
 </div>
 </div>
 </div>
@@ -214,6 +214,7 @@
 <li><span><strong>Chiudete lo stampo una volta.</strong> Un LED blu lampeggia brevemente. Ciò conferma che il perno di ciclo viene mosso correttamente.</span></li>
 <li><span><strong>Collegatelo allo stampo in moldHUB.</strong> Tramite NFC, numero di serie o codice QR.</span></li>
 <li><span><strong>Leggete i dati.</strong> Il dispositivo invia a moldHUB numero di cicli, tempo di ciclo, temperatura e posizione, per impostazione predefinita una volta all’ora.</span></li>
+<li><span><strong>Nessuna rete o batteria scarica?</strong> Avvicinate lo smartphone al logo NFC sul dispositivo. Lo smartphone legge il numero di cicli e lo inoltra a moldHUB.</span></li>
 </ol>
 <ul class="benefits"><li>Nessun cablaggio verso la macchina</li><li>Conta anche senza rete</li><li>La batteria dura diversi mesi</li></ul>
 </div>
@@ -341,7 +342,7 @@
 <div class="section-head reveal">
 <p class="eyebrow">Il dispositivo</p>
 <h2 id="device-title">Abbastanza piccolo per una tasca nello stampo.</h2>
-<p class="lead">Il moldMIND X si installa in una tasca dello stampo. Non servono cavi verso la macchina né un display: i risultati li vedete in moldHUB.</p>
+<p class="lead">Il moldMIND X si installa in una tasca dello stampo. Si adatta anche alle tasche esistenti dei classici contacicli meccanici, così potete ammodernare gli stampi che avete già. Non servono cavi verso la macchina né un display: i risultati li vedete in moldHUB.</p>
 </div>
 <div class="device-grid">
 <div class="reveal">
@@ -375,7 +376,7 @@
 </div>
 <div class="facts">
 <div class="fact reveal"><h4>Ricarica tramite USB-C</h4><p>Collegate un cavo USB-C e un caricabatterie fino a 1 A. Una ricarica richiede in genere meno di 30 minuti.</p></div>
-<div class="fact reveal" style="--d:.06s"><h4>Lettura tramite NFC</h4><p>Avvicinate uno smartphone all’area NFC per leggere il numero di cicli, anche dove non c’è rete mobile. Il valore viene aggiornato almeno una volta all’ora.</p></div>
+<div class="fact reveal" style="--d:.06s"><h4>Lettura tramite NFC</h4><p>Avvicinate lo smartphone al logo NFC sul dispositivo. Lo smartphone legge il numero di cicli e lo inoltra a moldHUB, così i dati arrivano anche quando il dispositivo non ha copertura mobile o la batteria è scarica. Il valore sul dispositivo viene aggiornato almeno una volta all’ora.</p></div>
 <div class="fact reveal" style="--d:.12s"><h4>Aggiornamento tramite USB-C</h4><p>Il nuovo firmware arriva come file da Männer e viene copiato sul dispositivo tramite la porta USB-C.</p></div>
 </div>
 </div>
