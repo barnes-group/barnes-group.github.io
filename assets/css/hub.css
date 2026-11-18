@@ -1,33 +1,111 @@
 /* Copyright (c) 2026 SPECTRIX. All rights reserved. */
-.hub-hero { padding: clamp(40px, 5vw, 72px) 0 clamp(16px, 3vw, 32px); background:
-  radial-gradient(800px 420px at 80% 0%, var(--glow), transparent 70%),
-  radial-gradient(600px 300px at 0% 20%, rgba(244, 178, 35, 0.12), transparent 70%), var(--bg); }
-.hub-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); max-width: 22ch; letter-spacing: -0.025em; }
-.hub-hero .lead { max-width: 680px; }
-.hub-products { padding: 8px 0 clamp(64px, 8vw, 110px); }
+/* Landing page in the SPECTRIX look. The G25 tile keeps the Gammaflux blue. */
+
+@font-face { font-family: "Roboto Condensed"; font-weight: 300; font-style: normal; font-display: swap; src: url("../fonts/RobotoCondensed-300.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Condensed"; font-weight: 400; font-style: normal; font-display: swap; src: url("../fonts/RobotoCondensed-400.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Condensed"; font-weight: 700; font-style: normal; font-display: swap; src: url("../fonts/RobotoCondensed-700.woff2") format("woff2"); }
+
+:root {
+  --purple: #332882;
+  --purple-hero: #3d3587;
+  --purple-deep: #1f1856;
+  --ink: #121a21;
+  --muted: #4b5661;
+  --grey: #f4f6f9;
+  --line: rgba(18, 26, 33, 0.12);
+  --header-h: 80px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+body { margin: 0; font-family: "Roboto Condensed", "Arial Narrow", system-ui, sans-serif; font-size: 1.125rem; line-height: 1.5; color: var(--ink); background: #fff; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--purple); }
+:focus-visible { outline: 3px solid #f4b223; outline-offset: 3px; }
+.skip-link { position: absolute; left: -999px; top: 8px; background: var(--purple); color: #fff; padding: 10px 16px; z-index: 200; }
+.skip-link:focus { left: 8px; }
+h1, h2, h3 { font-weight: 400; line-height: 1.05; margin: 0; }
+
+/* Header ---------------------------------------------------------------------- */
+.hub-header { position: sticky; top: 0; z-index: 50; height: var(--header-h); display: flex; align-items: center; gap: 28px; padding-left: clamp(16px, 2vw, 24px); background: #fff; box-shadow: 0 1px 0 var(--line); }
+.hub-logo img { height: 26px; width: auto; }
+.hub-nav { display: flex; gap: 6px; margin-right: auto; margin-left: 12px; }
+.hub-nav a { color: var(--ink); text-decoration: none; font-weight: 700; font-size: 1rem; padding: 8px 14px; border-radius: 999px; }
+.hub-nav a:hover { background: var(--grey); color: var(--purple); }
+.hub-nav .ext::after { content: " ↗"; font-weight: 400; }
+.hub-cta { align-self: stretch; display: flex; align-items: center; padding: 0 clamp(20px, 3vw, 40px); background: var(--purple); color: #fff; font-weight: 700; font-size: 1rem; text-decoration: none; }
+.hub-cta:hover { background: var(--purple-deep); color: #fff; }
+
+.lang-switch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
+.lang-switch a { padding: 4px 11px; border-radius: 999px; font-weight: 700; font-size: 0.9rem; color: var(--muted); text-decoration: none; }
+.lang-switch a:hover { color: var(--purple); }
+.lang-switch a[aria-current] { background: var(--purple); color: #fff; }
+
+/* Hero ------------------------------------------------------------------------ */
+.hub-hero { color: #fff; text-align: center; padding: clamp(72px, 10vw, 140px) 20px clamp(72px, 9vw, 120px); background:
+  radial-gradient(900px 500px at 85% 0%, rgba(255, 255, 255, 0.16), transparent 65%),
+  radial-gradient(700px 400px at 0% 100%, rgba(10, 6, 60, 0.45), transparent 65%),
+  var(--purple-hero); }
+.hub-hero-inner { max-width: 980px; margin-inline: auto; }
+.hub-eyebrow { margin: 0 0 18px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); }
+.hub-hero h1 { font-weight: 300; font-size: clamp(2.8rem, 7.5vw, 6rem); text-transform: uppercase; letter-spacing: 0.005em; }
+.hub-sub { margin: 22px auto 34px; max-width: 640px; font-size: clamp(1.2rem, 2vw, 1.5rem); color: rgba(255, 255, 255, 0.92); }
+.hub-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.pill-btn { display: inline-block; padding: 15px 32px; border-radius: 999px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid transparent; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+.pill-white { background: #fff; color: var(--ink); }
+.pill-white:hover { background: var(--grey); color: var(--purple); }
+.pill-outline { border-color: rgba(255, 255, 255, 0.85); color: #fff; }
+.pill-outline:hover { background: #fff; color: var(--purple); }
+.pill-purple { background: var(--purple); color: #fff; }
+.pill-purple:hover { background: var(--purple-deep); }
+
+/* Products -------------------------------------------------------------------- */
+.hub-wrap { width: min(100% - 40px, 1200px); margin-inline: auto; }
+.hub-wrap.narrow { max-width: 860px; text-align: center; }
+.hub-products { background: var(--grey); padding: clamp(56px, 8vw, 112px) 0; }
+.hub-products h2, .hub-about h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); text-align: center; }
+.hub-lead { text-align: center; color: var(--muted); max-width: 640px; margin: 16px auto clamp(32px, 5vw, 56px); font-size: 1.2rem; }
 .grid { display: grid; grid-template-columns: 1.7fr 1fr; gap: 24px; }
-.product { display: grid; grid-template-columns: 200px 1fr; align-items: center; min-height: 330px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(135deg, var(--surface-2), var(--surface)); text-decoration: none; color: inherit; overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
-a.product:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--blue) 60%, transparent); box-shadow: var(--shadow); }
+
+/* The G25 tile stays in the Gammaflux blue */
+.product { --tile-text: #eaf1fb; --tile-muted: #a9bbd3; --tile-accent: #f4b223; display: grid; grid-template-columns: 200px 1fr; align-items: center; min-height: 330px; border-radius: 24px; background: radial-gradient(500px 260px at 100% 0%, rgba(62, 163, 245, 0.28), transparent 70%), linear-gradient(135deg, #0f315a, #061b36); color: var(--tile-text); text-decoration: none; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+a.product:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -24px rgba(3, 19, 39, 0.7); color: var(--tile-text); }
 .product-media { padding: 24px 0 24px 36px; }
 .product-media img { height: 282px; width: auto; max-width: none; filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.45)); }
 .product-body { padding: 28px 36px 28px 20px; }
-.product-brand { height: 34px; width: auto; filter: var(--logo-filter); margin-bottom: 22px; }
-.product-body h2 { font-size: clamp(2.4rem, 4vw, 3.2rem); margin-bottom: 0.1em; }
-.product-body p { color: var(--muted); margin-bottom: 1em; }
-.tag { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 14px; }
-.go { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--accent-ink); }
+.product-brand { height: 34px; width: auto; margin-bottom: 20px; }
+.product-body h3 { font-size: clamp(2.6rem, 4vw, 3.4rem); font-weight: 700; margin-bottom: 4px; }
+.tag { display: block; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tile-accent); margin-bottom: 14px; }
+.product-body p { color: var(--tile-muted); margin: 0 0 16px; font-size: 1.1rem; line-height: 1.4; }
+.go { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--tile-accent); }
 .go svg { width: 18px; height: 18px; transition: transform 0.2s; }
 a.product:hover .go svg { transform: translateX(5px); }
-.product.soon { display: grid; grid-template-columns: 1fr; border-style: dashed; background: transparent; }
-.product.soon h2 { font-size: 1.6rem; }
-.product.soon .tag { margin-bottom: 8px; }
-.logo-wide { height: 26px !important; width: auto; }
-.site-footer img.logo-wide { height: 28px; }
-@media (max-width: 960px) { .grid { grid-template-columns: 1fr; } }
-@media (max-width: 560px) { .product { grid-template-columns: 1fr; } .product-media { padding: 28px 28px 0; } .product-media img { height: 220px; } .product-body { padding: 24px 28px 28px; } }
-@media (max-width: 960px) { .product.soon { min-height: 0; } }
-.site-footer { padding: 24px 0 22px; font-size: 0.85rem; }
-.site-footer .wrap { align-items: center; gap: 12px 32px; }
-.site-footer img.logo-wide { height: 20px; margin-bottom: 8px; }
-.site-footer small { max-width: none; }
-@media (max-width: 480px) { .nav-inline a:not(.nav-cta) { display: none; } .site-header .wrap { gap: 12px; } .logo-wide { height: 22px !important; } }
+.product.soon { display: grid; grid-template-columns: 1fr; border: 2px dashed rgba(51, 40, 130, 0.3); background: #fff; color: var(--ink); min-height: 0; }
+.product.soon .tag { color: var(--purple); }
+.product.soon h3 { font-size: 1.9rem; font-weight: 400; }
+.product.soon p { color: var(--muted); margin: 8px 0 0; }
+.product.soon .product-body { padding: 32px; }
+
+/* About ----------------------------------------------------------------------- */
+.hub-about { padding: clamp(56px, 8vw, 112px) 0; }
+.hub-about p { margin: 22px 0 32px; font-size: 1.25rem; color: var(--muted); }
+
+/* Footer ---------------------------------------------------------------------- */
+.hub-footer { background: var(--purple-deep); color: rgba(255, 255, 255, 0.8); padding: 22px 0; font-size: 0.95rem; }
+.hub-footer .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 28px; }
+.hub-footer img { height: 20px; width: auto; }
+.hub-footer a { color: #fff; }
+.hub-footer small { margin-right: auto; font-size: inherit; }
+
+@media (max-width: 960px) { .grid { grid-template-columns: 1fr; } .hub-nav { display: none; } .lang-switch { margin-left: auto; } }
+@media (max-width: 560px) {
+  .hub-header { gap: 12px; }
+  .hub-logo img { height: 20px; }
+  .product { grid-template-columns: 1fr; }
+  .product-media { padding: 28px 28px 0; }
+  .product-media img { height: 220px; }
+  .product-body { padding: 24px 28px 28px; }
+  .hub-cta { padding: 0 14px; font-size: 0.9rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+html[lang="de"] .hub-hero h1 { font-size: clamp(2.3rem, 6vw, 4.8rem); }

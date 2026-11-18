@@ -7,10 +7,15 @@ Template macro:  {{dev <screen>|<panel|tablet|browser>|<alt text>|<caption>|<slo
   slot     optional data-slot used by the scenario switcher
   url      address shown in the browser frame
 """
+import hashlib
 import html
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import i18n  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SCREENS = ROOT / "g25/assets/img/screens"
@@ -63,12 +68,89 @@ def device(match):
     )
 
 
+BASE = "https://barnes-group.github.io"
+PAGES = {
+    # template -> (output folder relative to ROOT, public path)
+    "hub": ("", "/"),
+    "g25": ("g25", "/g25/"),
+}
+LANGS = ["de"]
+EN_MAILTO = "mailto:info@gammaflux.com?subject=G25%20demo%20request&body=Hello%2C%0A%0AI%20would%20like%20to%20book%20a%20demo%20of%20the%20G25.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0APreferred%20date%3A%0A"
+DE_MAILTO = "mailto:info@gammaflux.de?subject=G25%20Demo-Anfrage&body=Guten%20Tag%2C%0A%0Aich%20m%C3%B6chte%20gerne%20eine%20Demo%20des%20G25%20buchen.%0A%0AName%3A%0AFirma%3A%0ATelefon%3A%0AWunschtermin%3A%0A"
+# German pages link to German versions of the other pages
+DE_LINKS = {"hub": [('href="../g25/"', 'href="../g25/de/"')],
+            "g25": [('href="../../"', 'href="../../de/"')]}
+
+
+def asset_hash(page_dir, url):
+    f = (page_dir / url).resolve()
+    return hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else None
+
+
+def stamp_assets(text, page_dir):
+    def sub(m):
+        h = asset_hash(page_dir, m.group(2))
+        return f'{m.group(1)}="{m.group(2)}?v={h}"' if h else m.group(0)
+    return re.sub(r'(src|href)="([^"?#:]+\.(?:css|js))(?:\?v=\w+)?"', sub, text)
+
+
+def prefix_urls(text, prefix="../"):
+    def fix(u):
+        u = u.strip()
+        if not u or u.startswith(("http", "mailto:", "#", "data:", "/", "./", "{{")) or u == ".":
+            return u
+        return prefix + u
+
+    def attr(m):
+        name, val = m.group(1), m.group(2)
+        if name == "srcset":
+            val = ", ".join(" ".join([fix(p.split()[0])] + p.split()[1:]) for p in val.split(","))
+        else:
+            val = fix(val)
+        return f'{name}="{val}"'
+    return re.sub(r'\b(src|href|srcset|data-full)="([^"]*)"', attr, text)
+
+
+def finalize(text, tpl, lang, folder, path):
+    en_url, de_url = BASE + path, BASE + path + "de/"
+    alt = (f'<link rel="canonical" href="{en_url if lang == "en" else de_url}">'
+           f'<link rel="alternate" hreflang="en" href="{en_url}">'
+           f'<link rel="alternate" hreflang="de" href="{de_url}">'
+           f'<link rel="alternate" hreflang="x-default" href="{en_url}">')
+    redirect = ("<script>try{if(!localStorage.getItem('lang')&&/^de\\b/i.test(navigator.language||''))"
+                "location.replace('de/'+location.hash)}catch(e){}</script>") if lang == "en" else ""
+    text = text.replace("<!--LANG_HEAD-->", redirect + alt)
+    hrefs = {"en": ("./", "de/"), "de": ("../", "./")}[lang]
+    text = text.replace("{{lang_en}}", hrefs[0] if lang == "en" else "../").replace("{{lang_de}}", hrefs[1])
+    text = text.replace(f'data-lang="{lang}"', f'data-lang="{lang}" aria-current="true"')
+    return text
+
+
 def main():
-    for tpl in (ROOT / "scripts/templates").glob("*.html"):
-        out = ROOT / tpl.stem / "index.html"
-        text = re.sub(r"\{\{dev ([^}]+)\}\}", device, tpl.read_text(encoding="utf-8"))
-        out.write_text(text, encoding="utf-8")
+    for name, (folder, path) in PAGES.items():
+        tpl = ROOT / "scripts/templates" / f"{name}.html"
+        raw = re.sub(r"\{\{dev ([^}]+)\}\}", device, tpl.read_text(encoding="utf-8"))
+        page_dir = ROOT / folder if folder else ROOT
+        raw = stamp_assets(raw, page_dir)
+        out = page_dir / "index.html"
+        out.write_text(finalize(raw, name, "en", folder, path), encoding="utf-8")
         print("wrote", out.relative_to(ROOT))
+        for lang in LANGS:
+            mapping = i18n.load(lang)
+            missing = set()
+            text = i18n.translate(raw.replace(EN_MAILTO, DE_MAILTO), mapping, missing)
+            if missing:
+                print(f"  {lang}: {len(missing)} untranslated segments in {name}")
+            text = text.replace('<html lang="en"', f'<html lang="{lang}" data-root="../"', 1)
+            text = text.replace('data-dec="2">0.05<', 'data-dec="2">0,05<').replace('>0.1 °C (0.2 °F)<', '>0,1 °C (0,2 °F)<')
+            text = prefix_urls(text)
+            for a, b in DE_LINKS.get(name, []):
+                text = text.replace(a, b)
+            text = finalize(text, name, lang, folder, path)
+            lout = page_dir / lang / "index.html"
+            lout.parent.mkdir(parents=True, exist_ok=True)
+            lout.write_text(text, encoding="utf-8")
+            print("wrote", lout.relative_to(ROOT))
 
 
 if __name__ == "__main__":

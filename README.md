@@ -4,33 +4,35 @@ Static product website served by GitHub Pages at `https://barnes-group.github.io
 
 | Path | Content |
 | --- | --- |
-| `/` | Product hub (`index.html`) |
-| `/g25/` | G25 hot runner temperature controller |
+| `/`, `/de/` | Landing page in the SPECTRIX look (EN, DE) |
+| `/g25/`, `/g25/de/` | G25 hot runner temperature controller in the Gammaflux blue look (EN, DE) |
 
-More product sections can be added as further top-level folders (for example `/g26/`) and linked from the hub.
+Add further products as top-level folders (for example `/g26/`) and link them from the landing page.
 
 ## Structure
 
-- `assets/` shared across products: fonts, brand logos, base styles (`css/site.css`)
-- `g25/assets/` G25 styles, script and images. `img/screens/` holds genuine G25 application screenshots as WebP (full size and `-sm` for small screens).
-- `scripts/templates/g25.html` source of `g25/index.html`. Do not edit the generated file by hand.
-- `scripts/build_pages.py` renders templates. `{{dev <screen>|<panel|tablet|browser>|<alt>|<caption>|<slot>|<url>}}` inserts a screenshot inside a device frame, and a caption makes it enlargeable.
-- Screenshots are exported by `doc/website/prepare_screenshots.py` in the (private) G25 repository, which also replaces customer names in the sample data and fails if one is still readable.
-- `scripts/detect_crops.py` writes `scripts/crops.json`, which crops tall screens to the relevant area. Edit `OVERRIDES` in the script for dialogs and short screens.
+- `scripts/templates/*.html` are the English sources of every page. Do not edit generated `index.html` files.
+- `scripts/build_pages.py` renders templates to `index.html` and the translated `de/index.html`, adds cache-busting hashes to CSS/JS, and writes canonical and hreflang tags. `{{dev <screen>|<panel|tablet|browser>|<alt>|<caption>|<slot>|<url>}}` inserts a screenshot in a device frame; a caption makes it enlargeable.
+- `scripts/i18n.py` and `scripts/i18n/de.json` translate by exact English segment (`{english: german}`). Run `python3 scripts/i18n.py dump de index.html g25/index.html` after changing copy to list segments without a translation; the build also reports counts. Product names (Mold Wizard, Mold Doctor, Even Heat, Tool Graph, ...) stay in English.
+- `assets/css/site.css` shared base and G25 look, `assets/css/hub.css` landing page (SPECTRIX look), `g25/assets/` G25 styles, script and images.
+- `scripts/detect_crops.py` writes `scripts/crops.json` (crop of tall screenshots).
+- Screenshots are exported from the private G25 repository by `doc/website/prepare_screenshots.py`, which also replaces customer names in sample data.
 
-## Update the G25 page
+## Language
+
+Pages exist in English (default) and German. The EN/DE switch is in the header. First-time visitors whose browser language is German are redirected to `/de/`; an explicit choice is remembered in `localStorage` and wins.
+
+## Update
 
 ```sh
-python3 -m venv .venv && .venv/bin/pip install -r scripts/requirements.txt   # tesseract is also required
-# in the G25 repository, only when screenshots changed:
-#   python3 doc/website/prepare_screenshots.py ../barnes-group.github.io
+python3 -m venv .venv && .venv/bin/pip install -r scripts/requirements.txt   # tesseract is also required for the screenshot export
 .venv/bin/python scripts/detect_crops.py
 .venv/bin/python scripts/build_pages.py
-python3 -m http.server 8000                                  # preview at http://localhost:8000/g25/
+python3 -m http.server 8000      # preview at http://localhost:8000/
 ```
 
-Content must stay limited to features of the latest released G25 software. Screenshots come from the release screenshot pipeline of the G25 repository, so rerun it for a new release.
+Content stays limited to features of the latest released G25 software.
 
 ## Publishing
 
-GitHub Pages serves the `main` branch from the repository root. Pushing to `main` publishes.
+GitHub Pages serves `main` from the repository root. Pushing to `main` publishes.

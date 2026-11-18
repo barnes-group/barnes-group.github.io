@@ -3,6 +3,8 @@
   'use strict';
 
   var doc = document.documentElement;
+  var DE = doc.lang === 'de';
+  var ROOT = doc.getAttribute('data-root') || '';
   var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
@@ -68,10 +70,10 @@
       if (start === null) start = ts;
       var p = Math.min((ts - start) / 1100, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = (end * eased).toFixed(dec);
+      el.textContent = (end * eased).toFixed(dec).replace('.', DE ? ',' : '.');
       if (p < 1) requestAnimationFrame(step);
     }
-    el.textContent = (0).toFixed(dec);
+    el.textContent = (0).toFixed(dec).replace('.', DE ? ',' : '.');
     requestAnimationFrame(step);
   }
 
@@ -93,14 +95,20 @@
   /* Remote operation scenarios ----------------------------------------- */
   var scenarios = [
     { panel: 'dashboard_zones_reaching_target', tablet: 'dashboard_line_chart', browser: 'alarms',
-      alt: { dashboard_zones_reaching_target: 'Dashboard with zone tiles heating to target', dashboard_line_chart: 'Line chart of zone temperatures', alarms: 'Alarms screen with no active alarms' },
-      text: 'The operator works at the panel, the shift supervisor follows the temperature trend on a tablet and the control room keeps an eye on alarms.' },
+      alt: DE ? { dashboard_zones_reaching_target: 'Dashboard mit Zonenkacheln beim Aufheizen auf die Zieltemperatur', dashboard_line_chart: 'Liniendiagramm der Zonentemperaturen', alarms: 'Alarmbildschirm ohne aktive Alarme' }
+              : { dashboard_zones_reaching_target: 'Dashboard with zone tiles heating to target', dashboard_line_chart: 'Line chart of zone temperatures', alarms: 'Alarms screen with no active alarms' },
+      text: DE ? 'Der Bediener arbeitet am Panel, der Schichtleiter verfolgt den Temperaturverlauf auf einem Tablet, und der Leitstand behält die Alarme im Blick.'
+               : 'The operator works at the panel, the shift supervisor follows the temperature trend on a tablet and the control room keeps an eye on alarms.' },
     { panel: 'dashboard_all_zones_on', tablet: 'mold_doctor_tda_completed', browser: 'report_view',
-      alt: { dashboard_all_zones_on: 'Dashboard with all zones up to temperature', mold_doctor_tda_completed: 'Thermodynamic analysis results', report_view: 'Analysis report' },
-      text: 'The process engineer runs a thermodynamic analysis from a tablet and reviews the report on a laptop, while the panel keeps showing the dashboard.' },
+      alt: DE ? { dashboard_all_zones_on: 'Dashboard, alle Zonen auf Temperatur', mold_doctor_tda_completed: 'Ergebnisse der thermodynamischen Analyse', report_view: 'Analysebericht' }
+              : { dashboard_all_zones_on: 'Dashboard with all zones up to temperature', mold_doctor_tda_completed: 'Thermodynamic analysis results', report_view: 'Analysis report' },
+      text: DE ? 'Der Prozessingenieur startet eine thermodynamische Analyse auf dem Tablet und prüft den Bericht am Laptop, während das Panel weiter das Dashboard zeigt.'
+               : 'The process engineer runs a thermodynamic analysis from a tablet and reviews the report on a laptop, while the panel keeps showing the dashboard.' },
     { panel: 'dashboard_table', tablet: 'tools_and_diagnostics_service', browser: 'activity_log',
-      alt: { dashboard_table: 'Table view with per-zone values', tools_and_diagnostics_service: 'Service page with system status', activity_log: 'Activity log of user actions' },
-      text: 'Maintenance checks system status on a tablet next to the cabinet and reviews the activity log from the office.' }
+      alt: DE ? { dashboard_table: 'Tabellenansicht mit Werten je Zone', tools_and_diagnostics_service: 'Serviceseite mit Systemstatus', activity_log: 'Aktivitätsprotokoll der Benutzeraktionen' }
+              : { dashboard_table: 'Table view with per-zone values', tools_and_diagnostics_service: 'Service page with system status', activity_log: 'Activity log of user actions' },
+      text: DE ? 'Die Wartung prüft den Systemstatus auf einem Tablet am Schaltschrank und sieht das Aktivitätsprotokoll vom Büro aus ein.'
+               : 'Maintenance checks system status on a tablet next to the cabinet and reviews the activity log from the office.' }
   ];
   var stage = $('#remote-stage');
   var caption = $('#stage-caption');
@@ -109,7 +117,7 @@
     ['panel', 'tablet', 'browser'].forEach(function (slot) {
       var img = $('img[data-slot="' + slot + '"]', stage);
       var name = s[slot];
-      var base = 'assets/img/screens/' + name;
+      var base = ROOT + 'assets/img/screens/' + name;
       var pre = new Image();
       pre.onload = function () {
         img.style.opacity = '0';
