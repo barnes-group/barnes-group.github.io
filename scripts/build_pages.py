@@ -73,6 +73,7 @@ PAGES = {
     # template -> (output folder relative to ROOT, public path)
     "hub": ("", "/"),
     "g25": ("g25", "/g25/"),
+    "moldmind": ("moldmind", "/moldmind/"),
 }
 # Add a language: append it here, add its flag below and create scripts/i18n/<code>.json
 LANG_META = {"en": ("English", "GB"), "de": ("Deutsch", "DE"), "it": ("Italiano", "IT")}
@@ -90,8 +91,9 @@ MAILTO = {"de": DE_MAILTO, "it": IT_MAILTO}
 # German pages link to German versions of the other pages
 def lang_links(name, lang):
     """Links between pages must stay inside the chosen language."""
-    return {"hub": [('href="../g25/"', f'href="../g25/{lang}/"')],
-            "g25": [('href="../../"', f'href="../../{lang}/"')]}.get(name, [])
+    return {"hub": [('href="../g25/"', f'href="../g25/{lang}/"'), ('href="../moldmind/"', f'href="../moldmind/{lang}/"')],
+            "g25": [('href="../../"', f'href="../../{lang}/"')],
+            "moldmind": [('href="../../"', f'href="../../{lang}/"')]}.get(name, [])
 
 
 def asset_hash(page_dir, url):

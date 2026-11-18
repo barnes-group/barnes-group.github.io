@@ -75,7 +75,7 @@ h1, h2, h3 { font-weight: 400; line-height: 1.05; margin: 0; }
 .hub-products { background: var(--grey); padding: clamp(56px, 8vw, 112px) 0; }
 .hub-products h2, .hub-about h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); text-align: center; }
 .hub-lead { text-align: center; color: var(--muted); max-width: 640px; margin: 16px auto clamp(32px, 5vw, 56px); font-size: 1.2rem; }
-.grid { display: grid; grid-template-columns: 1.7fr 1fr; gap: 24px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
 /* The G25 tile stays in the Gammaflux blue */
 .product { --tile-text: #eaf1fb; --tile-muted: #a9bbd3; --tile-accent: #f4b223; display: grid; grid-template-columns: 200px 1fr; align-items: center; min-height: 330px; border-radius: 24px; background: radial-gradient(500px 260px at 100% 0%, rgba(62, 163, 245, 0.28), transparent 70%), linear-gradient(135deg, #0f315a, #061b36); color: var(--tile-text); text-decoration: none; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
@@ -95,6 +95,13 @@ a.product:hover .go svg { transform: translateX(5px); }
 .product.soon h3 { font-size: 1.9rem; font-weight: 400; }
 .product.soon p { color: var(--muted); margin: 8px 0 0; }
 .product.soon .product-body { padding: 32px; }
+
+/* The moldMIND X tile uses the Männer colours: SPECTRIX purple with a light-blue accent */
+.product--maenner { --tile-accent: #32c5f9; --tile-muted: #c6c3e6; --tile-text: #f1effb; background: radial-gradient(500px 260px at 100% 0%, rgba(50, 197, 249, 0.22), transparent 70%), linear-gradient(135deg, #332882, #141844); }
+a.product--maenner:hover { box-shadow: 0 24px 50px -24px rgba(20, 24, 68, 0.8); }
+.product--maenner .product-media img { height: auto; width: 100%; max-width: 170px; border-radius: 16px; filter: none; box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.55); }
+.product--maenner .product-brand { height: 40px; }
+.product--maenner .product-body h3 { font-size: clamp(2.2rem, 3.4vw, 2.9rem); }
 
 /* About ----------------------------------------------------------------------- */
 .hub-about { padding: clamp(56px, 8vw, 112px) 0; }

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <!--LANG_HEAD-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>moldMIND X with moldHUB | Männer by SPECTRIX</title>
+  <meta name="description" content="moldMIND X counts the cycles of your injection molds and tracks where they are. moldHUB shows all your molds in one web application: cycles, cycle time, temperature, location and maintenance.">
+  <meta name="theme-color" content="#0e1033">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="moldMIND X with moldHUB">
+  <meta property="og:description" content="Count mold cycles, track every mold and plan maintenance on time, from any browser or phone.">
+  <meta property="og:image" content="https://barnes-group.github.io/moldmind/assets/img/og-moldmind.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preload" href="../assets/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/moldmind.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.remove('no-js');
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      var q = /[?&]theme=(light|dark)/.exec(location.search);
+      if (q) t = q[1];
+      if (t !== 'light') t = 'dark';
+      d.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="All products">
+      <img src="../assets/img/brand/maenner-by-spectrix-light.png" alt="Männer by SPECTRIX" width="902" height="268">
+      <span class="crumb"><b>moldMIND X</b> + moldHUB</span>
+    </a>
+    <button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Page sections">
+      <a href="#overview">Overview</a>
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#device">The device</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="https://spectrix.com/en/ms-contact" rel="noopener">Contact us</a>
+      <!--LANG_SWITCH-->
+      <button class="icon-btn theme-btn" type="button" aria-label="Toggle light and dark theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO ----------------------------------------------------------------- -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Mold monitoring</p>
+      <h1 id="hero-title">Know every mold, <span class="grad">wherever it is.</span></h1>
+      <p class="lead">The moldMIND X sits in your mold and counts every cycle. moldHUB shows you all your molds in one place: how much they have produced, how fast they run, where they are and when they need maintenance.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#how">See how it works
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="https://spectrix.com/en/ms-contact" rel="noopener">Contact us</a>
+      </div>
+      <ul class="chips" aria-label="Key facts">
+        <li>Data over the mobile network</li>
+        <li>Battery lasts several months</li>
+        <li>Works in any modern browser</li>
+        <li>Install it as an app on your phone</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <figure class="shot">
+        <div class="shot__bar"><i></i><i></i><i></i><span>moldhub.io</span></div>
+        <img src="assets/img/hub-overview-sm.webp" srcset="assets/img/hub-overview-sm.webp 640w, assets/img/hub-overview.webp 1280w" sizes="(max-width: 900px) 90vw, 520px" width="1280" height="640" alt="moldHUB overview: cards and charts for parts produced, cycles, cycle time and utilization" fetchpriority="high">
+      </figure>
+      <figure class="hero-device">
+        <img src="assets/img/moldmind-x-sm.webp" srcset="assets/img/moldmind-x-sm.webp 520w, assets/img/moldmind-x.webp 1032w" sizes="(max-width: 900px) 40vw, 240px" width="1032" height="762" alt="The moldMIND X: a black housing with a USB-C port, status LEDs and an NFC area">
+      </figure>
+      <img class="hero-phone" src="assets/img/phone-device-sm.webp" width="299" height="625" alt="moldHUB on a phone showing a device with battery, cycles, temperature and location">
+    </div>
+  </div>
+</section>
+
+<!-- STATS ---------------------------------------------------------------- -->
+<section class="stats" aria-label="moldMIND X at a glance">
+  <div class="wrap">
+    <ul>
+      <li class="reveal"><b><em data-count="1">1</em> h</b><span>default time between data updates</span></li>
+      <li class="reveal" style="--d:.08s"><b>0–<em data-count="80">80</em> °C</b><span>operating temperature of the device</span></li>
+      <li class="reveal" style="--d:.16s"><b>&lt;<em data-count="30">30</em> min</b><span>typical time to charge the battery</span></li>
+      <li class="reveal" style="--d:.24s"><b>IP5X</b><span>dust-protected housing</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- OVERVIEW ------------------------------------------------------------- -->
+<section class="section" id="overview" aria-labelledby="overview-title">
+  <div class="wrap">
+    <div class="overview-grid">
+      <div class="prose reveal">
+        <p class="eyebrow">Product overview</p>
+        <h2 id="overview-title" style="font-size:clamp(2rem,4.2vw,3.1rem)">Know where your molds are and what they have done.</h2>
+        <p class="lead">The moldMIND X is a small device that is built into the mold. It counts every cycle and sends its data to moldHUB, a web application where you can see all your molds at a glance.</p>
+        <p>The device <strong>counts the cycles</strong> and works out the <strong>average cycle time</strong>. It also <strong>measures the temperature</strong>, notices when it is <strong>taken out of the mold</strong>, and reports its <strong>approximate location</strong> from the mobile network.</p>
+        <p>In moldHUB you link every device to its mold. From then on you see <strong>cycles, cycle time, utilization, temperature and location</strong> of every mold, get an event when something needs attention, and keep the maintenance of your molds under control.</p>
+        <p>The moldMIND X is part of the mold: it has no display and needs a mold with a pocket for it. moldHUB is a monitoring tool. It shows what your molds are doing, but it does not control the machine.</p>
+        <div class="audience" role="list">
+          <div class="aud" role="listitem">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6"/></svg></div>
+            <div><h3>Molders</h3><p>Read the cycle count at the mold with your phone, even without network, and see the molds that are assigned to you.</p></div>
+          </div>
+          <div class="aud" role="listitem">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg></div>
+            <div><h3>Toolroom &amp; maintenance</h3><p>Follow the maintenance counter against your limit, get events for temperature, battery and maintenance, and keep drawings and protocols with the mold.</p></div>
+          </div>
+          <div class="aud" role="listitem">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-7"/></svg></div>
+            <div><h3>Planning &amp; management</h3><p>See parts produced, cycles, cycle time and utilization for all your molds, and where every mold is on a map.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="--d:.1s">
+        <table class="spec-table">
+          <caption>Key specifications</caption>
+          <tr><th>Function</th><td>Cycle counter and asset tracker for injection molds</td></tr>
+          <tr><th>Measures</th><td>Cycles, cycle time, temperature and location; notices removal from the mold</td></tr>
+          <tr><th>Data transfer</th><td>LTE-M / NB-IoT to moldHUB, by default once per hour</td></tr>
+          <tr><th>Without network</th><td>Cycle count by NFC (13.56 MHz) with a smartphone</td></tr>
+          <tr><th>Power</th><td>Two Li-Ion cells (16340, 850 mAh), charged by USB-C</td></tr>
+          <tr><th>Battery life</th><td>Several months</td></tr>
+          <tr><th>Housing</th><td>Nylon, 85 × 38 × 45.6 mm, IP5X</td></tr>
+          <tr><th>Operating temperature</th><td>0–80 °C</td></tr>
+          <tr><th>Mounting</th><td>In a mold pocket, two M4 × 50 screws at 3 Nm</td></tr>
+          <tr><th>Cycle pin</th><td>Ø 3.6 mm, stroke 0–3.5 mm</td></tr>
+        </table>
+        <p class="note">Specifications as published in the moldMIND X operator manual (firmware 1.0.2) and the moldHUB operator manual (software 24.8.0).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT FITS TOGETHER ------------------------------------------------- -->
+<section class="section alt" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">How it fits together</p>
+      <h2 id="how-title">From the mold to your screen.</h2>
+      <p class="lead">The device in the mold sends its data over the mobile network. moldHUB collects it and shows it to everyone who needs it, on any phone, tablet or PC.</p>
+    </div>
+    <div class="arch reveal">
+      <div class="arch-tier">
+        <h3>1 · In the mold</h3>
+        <div class="arch-nodes">
+          <div class="node hl">moldMIND X<small>sits in a pocket of the mold</small></div>
+          <div class="node">Cycle pin<small>moved by the mold at every cycle</small></div>
+          <div class="node">Temperature<small>measured by the device</small></div>
+          <div class="node">Dismantle contacts<small>notice when the device is removed</small></div>
+        </div>
+      </div>
+      <div class="arch-link"><span>LTE-M / NB-IoT · by default once per hour</span></div>
+      <div class="arch-tier">
+        <h3>2 · moldHUB</h3>
+        <div class="arch-nodes">
+          <div class="node blue">Fleet overview<small>parts, cycles, cycle time, utilization</small></div>
+          <div class="node blue">Molds &amp; devices<small>every mold linked to its moldMIND X</small></div>
+          <div class="node blue">Events &amp; maintenance<small>temperature, battery, cycle counts, maintenance</small></div>
+          <div class="node blue">Documents<small>drawings, manuals, protocols, 3D model</small></div>
+          <div class="node blue">Users &amp; roles<small>Admin, User, Simple User, Molder</small></div>
+        </div>
+      </div>
+      <div class="arch-link"><span>Secure login · in the browser or as an app</span></div>
+      <div class="arch-tier">
+        <h3>3 · Your people</h3>
+        <div class="arch-nodes">
+          <div class="node hl">Phone or tablet<small>install moldHUB as an app</small></div>
+          <div class="node">Laptop or PC<small>Chrome, Firefox or Safari</small></div>
+          <div class="node">Alerts<small>in the app and by e-mail</small></div>
+          <div class="node">Smartphone with NFC<small>reads the cycle count at the mold, without network</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES --------------------------------------------------------------- -->
+<section class="section" id="features" aria-labelledby="features-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Features</p>
+      <h2 id="features-title">What you get with moldMIND X and moldHUB.</h2>
+      <p class="lead">Six things that change how you keep track of your molds. Pick one to see how it works. Every screen on this page is a real screenshot from moldHUB.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Features">
+      <button class="pill" role="tab" id="tab-cycles" aria-controls="cycles" aria-selected="true">Cycle counting</button>
+      <button class="pill" role="tab" id="tab-fleet" aria-controls="fleet" aria-selected="false" tabindex="-1">Fleet overview</button>
+      <button class="pill" role="tab" id="tab-maintenance" aria-controls="maintenance" aria-selected="false" tabindex="-1">Maintenance &amp; events</button>
+      <button class="pill" role="tab" id="tab-location" aria-controls="location" aria-selected="false" tabindex="-1">Location &amp; history</button>
+      <button class="pill" role="tab" id="tab-phone" aria-controls="phone" aria-selected="false" tabindex="-1">On your phone</button>
+      <button class="pill" role="tab" id="tab-access" aria-controls="access" aria-selected="false" tabindex="-1">Access &amp; security</button>
+    </div>
+
+    <!-- 1 Cycle counting -->
+    <article class="feature" id="cycles" role="tabpanel" aria-labelledby="tab-cycles">
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Cycle counting</span>
+        <h3>Every cycle counted, at the mold.</h3>
+        <p class="lead">A pin on the moldMIND X is moved by the mold at every cycle. The device counts the cycles and works out the average cycle time and close time.</p>
+        <ol class="how">
+          <li><span><strong>Mount it in the mold.</strong> Put the device into the pocket of the mold and fasten it with two screws.</span></li>
+          <li><span><strong>Close the mold once.</strong> A blue LED flashes briefly. This confirms that the cycle pin is moved correctly.</span></li>
+          <li><span><strong>Link it to the mold in moldHUB.</strong> Use NFC, the serial number or a QR code.</span></li>
+          <li><span><strong>Read the data.</strong> The device sends the cycle count, cycle time, temperature and location to moldHUB, by default once per hour.</span></li>
+        </ol>
+        <ul class="benefits"><li>No wiring to the machine</li><li>Counts without network</li><li>Battery lasts several months</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <figure class="shot">
+          <div class="shot__bar"><i></i><i></i><i></i><span>moldhub.io</span></div>
+          <img class="zoomable" tabindex="0" role="button" src="assets/img/hub-charts-sm.webp" srcset="assets/img/hub-charts-sm.webp 600w, assets/img/hub-charts.webp 1100w" sizes="(max-width: 900px) 90vw, 560px" width="1100" height="798" loading="lazy" decoding="async" alt="moldHUB charts of cycles, cycle time, state and temperature for one mold" data-full="assets/img/hub-charts.webp" data-caption="Cycles, cycle time, state and temperature of one mold">
+          <figcaption>Cycles, cycle time, state and temperature of one mold</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 2 Fleet overview -->
+    <article class="feature flip" id="fleet" role="tabpanel" aria-labelledby="tab-fleet" hidden>
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Fleet overview</span>
+        <h3>All your molds in one overview.</h3>
+        <p class="lead">The moldHUB overview shows what your molds have produced on the days you choose: parts, cycles, cycle time and utilization.</p>
+        <ol class="how">
+          <li><span><strong>Choose the days</strong> you want to look at with the date picker.</span></li>
+          <li><span><strong>See the numbers</strong> as cards and charts: parts produced, cycles, cycle time and utilization.</span></li>
+          <li><span><strong>Filter your molds</strong> and switch between a list and tiles. Open a mold to see all its details.</span></li>
+          <li><span><strong>Find every mold on the map.</strong> The map shows where your molds are.</span></li>
+        </ol>
+        <ul class="benefits"><li>Any date range</li><li>List or tile view</li><li>Map of all molds</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <figure class="shot">
+          <div class="shot__bar"><i></i><i></i><i></i><span>moldhub.io</span></div>
+          <img class="zoomable" tabindex="0" role="button" src="assets/img/hub-overview-sm.webp" srcset="assets/img/hub-overview-sm.webp 640w, assets/img/hub-overview.webp 1280w" sizes="(max-width: 900px) 90vw, 560px" width="1280" height="640" loading="lazy" decoding="async" alt="moldHUB overview with cards for parts produced, cycles, cycle time and utilization" data-full="assets/img/hub-overview.webp" data-caption="The moldHUB overview">
+          <figcaption>The moldHUB overview</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 3 Maintenance -->
+    <article class="feature" id="maintenance" role="tabpanel" aria-labelledby="tab-maintenance" hidden>
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Maintenance &amp; events</span>
+        <h3>Maintenance on time, not too late.</h3>
+        <p class="lead">Decide how many cycles a mold may run before it needs maintenance. moldHUB keeps count and tells you when it is time.</p>
+        <ol class="how">
+          <li><span><strong>Enter the maintenance cycles</strong> for the mold.</span></li>
+          <li><span><strong>Follow the counter.</strong> The maintenance counter is shown against your limit in the mold list and on the mold page.</span></li>
+          <li><span><strong>Watch the events.</strong> moldHUB records events for temperature, battery, invalid cycle counts and maintenance. You can add comments to them.</span></li>
+          <li><span><strong>Get notified and close the loop.</strong> Events show up in the notification bell and can be sent by e-mail. When the work is finished, mark the maintenance as done.</span></li>
+        </ol>
+        <ul class="benefits"><li>Maintenance counter</li><li>Alerts in the app and by e-mail</li><li>Comments on events</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <figure class="shot">
+          <div class="shot__bar"><i></i><i></i><i></i><span>moldhub.io</span></div>
+          <img class="zoomable" tabindex="0" role="button" src="assets/img/hub-events-sm.webp" srcset="assets/img/hub-events-sm.webp 600w, assets/img/hub-events.webp 1100w" sizes="(max-width: 900px) 90vw, 560px" width="1100" height="653" loading="lazy" decoding="async" alt="moldHUB event list with maintenance, temperature and battery events and the maintenance button" data-full="assets/img/hub-events.webp" data-caption="Events of a mold, with the button to mark maintenance as done">
+          <figcaption>Events of a mold, with the button to mark maintenance as done</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 4 Location and history -->
+    <article class="feature flip" id="location" role="tabpanel" aria-labelledby="tab-location" hidden>
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Location &amp; history</span>
+        <h3>Where is my mold, and what has it been through?</h3>
+        <p class="lead">Every device reports its approximate location together with its battery level, temperature and cycles.</p>
+        <ol class="how">
+          <li><span><strong>See it on the map.</strong> The device page shows the last place the device reported from and when it was last active.</span></li>
+          <li><span><strong>Follow the history.</strong> Charts show cycles, battery and temperature over the days you choose.</span></li>
+          <li><span><strong>Know if it is removed.</strong> The device notices when it is taken out of the mold and records the time.</span></li>
+        </ol>
+        <div class="callout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span><b>Good to know:</b> the location comes from the mobile network cell the device is connected to, so it shows the area where the mold is, not the exact spot.</span></div>
+        <ul class="benefits"><li>Map with last position</li><li>Battery and temperature history</li><li>Removal recorded</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <figure class="shot">
+          <div class="shot__bar"><i></i><i></i><i></i><span>moldhub.io</span></div>
+          <img class="zoomable" tabindex="0" role="button" src="assets/img/hub-device-sm.webp" srcset="assets/img/hub-device-sm.webp 600w, assets/img/hub-device.webp 1100w" sizes="(max-width: 900px) 90vw, 560px" width="1100" height="1069" loading="lazy" decoding="async" alt="moldHUB device page with last activity, battery, cycles, temperature, a map and history charts" data-full="assets/img/hub-device.webp" data-caption="A moldMIND X in moldHUB: status, map and history">
+          <figcaption>A moldMIND X in moldHUB: status, map and history</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 5 On your phone -->
+    <article class="feature" id="phone" role="tabpanel" aria-labelledby="tab-phone" hidden>
+      <div class="feature-copy reveal">
+        <span class="feature-tag">On your phone</span>
+        <h3>moldHUB in your pocket.</h3>
+        <p class="lead">moldHUB runs in the browser of your phone, tablet or PC. Add it to your home screen and it opens like an app, with nothing to download from a store.</p>
+        <ol class="how">
+          <li><span><strong>Open moldhub.io</strong> in your browser and sign in.</span></li>
+          <li><span><strong>Add it to your home screen</strong> or install it from the browser menu.</span></li>
+          <li><span><strong>Open it like any other app.</strong> You get the same overview, molds and devices as on a PC, fitted to the screen of your phone.</span></li>
+        </ol>
+        <ul class="benefits"><li>No app store</li><li>Phone, tablet and PC</li><li>Chrome, Firefox and Safari</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <div class="trio">
+          <figure class="phone"><img class="zoomable" tabindex="0" role="button" src="assets/img/phone-mold.webp" width="299" height="625" loading="lazy" decoding="async" alt="moldHUB on a phone showing the details of a mold" data-full="assets/img/phone-mold.webp" data-caption="The mold page on a phone"><figcaption>Mold page</figcaption></figure>
+          <figure class="phone"><img class="zoomable" tabindex="0" role="button" src="assets/img/phone-device.webp" width="299" height="625" loading="lazy" decoding="async" alt="moldHUB on a phone showing a moldMIND X with battery, cycles, temperature and map" data-full="assets/img/phone-device.webp" data-caption="The device page on a phone"><figcaption>Device page</figcaption></figure>
+          <figure class="phone"><img class="zoomable" tabindex="0" role="button" src="assets/img/phone-install-sm.webp" srcset="assets/img/phone-install-sm.webp 300w, assets/img/phone-install.webp 399w" sizes="(max-width: 700px) 52vw, 200px" width="399" height="839" loading="lazy" decoding="async" alt="iPhone share menu with the option to add moldHUB to the home screen" data-full="assets/img/phone-install.webp" data-caption="Adding moldHUB to the home screen"><figcaption>Add to the home screen</figcaption></figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6 Access -->
+    <article class="feature flip" id="access" role="tabpanel" aria-labelledby="tab-access" hidden>
+      <div class="feature-copy reveal">
+        <span class="feature-tag">Access &amp; security</span>
+        <h3>The right people see the right molds.</h3>
+        <p class="lead">moldHUB has four user roles. A molder sees only the molds that were assigned to them, while administrators manage users, molds and devices.</p>
+        <ol class="how">
+          <li><span><strong>Choose a role</strong> for every user: Admin, User, Simple User or Molder.</span></li>
+          <li><span><strong>Assign molds to your molders</strong> so that they see exactly what they work with.</span></li>
+          <li><span><strong>Protect every login</strong> with two-factor authentication, by authenticator app or by an e-mail code.</span></li>
+          <li><span><strong>Make it yours.</strong> Every customer account can have its own theme and logo, and you can choose °C or °F.</span></li>
+        </ol>
+        <ul class="benefits"><li>Four user roles</li><li>Two-factor login</li><li>Your own theme and logo</li></ul>
+      </div>
+      <div class="feature-visual reveal" style="--d:.1s">
+        <div class="icon-panel" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span>Roles, two-factor login and your own branding</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- THE DEVICE ------------------------------------------------------------- -->
+<section class="section alt" id="device" aria-labelledby="device-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The device</p>
+      <h2 id="device-title">Small enough for a pocket in the mold.</h2>
+      <p class="lead">The moldMIND X is installed in a pocket of the mold. It needs no cables to the machine and no display: moldHUB is where you see the results.</p>
+    </div>
+    <div class="device-grid">
+      <div class="reveal">
+        <figure class="device-photo">
+          <img src="assets/img/moldmind-x-sm.webp" srcset="assets/img/moldmind-x-sm.webp 520w, assets/img/moldmind-x.webp 1032w" sizes="(max-width: 900px) 90vw, 560px" width="1032" height="762" loading="lazy" decoding="async" alt="The moldMIND X: a black housing with a USB-C port, status LEDs, an NFC area and the cycle pin">
+        </figure>
+        <figure class="drawing">
+          <img src="assets/img/dimensions-sm.webp" srcset="assets/img/dimensions-sm.webp 500w, assets/img/dimensions.webp 1000w" sizes="440px" width="1000" height="872" loading="lazy" decoding="async" alt="Technical drawing of the moldMIND X with its dimensions in millimeters">
+          <figcaption>Dimensions in millimeters</figcaption>
+        </figure>
+      </div>
+      <div class="prose reveal" style="--d:.1s">
+        <h3 style="font-size:clamp(1.6rem,3vw,2.2rem)">What you need to know before you mount it.</h3>
+        <p class="lead">The pocket must be made of steel, because the dismantle detection needs contact with the steel of the mold. The cycle pin must be moved by the moving part of the mold.</p>
+        <ol class="how">
+          <li><span><strong>Make the pocket</strong> 48 × 38 × 26 mm in the mold steel.</span></li>
+          <li><span><strong>Fasten the device</strong> with two M4 × 50 screws at 3 Nm. The housing is made of nylon, so do not tighten more.</span></li>
+          <li><span><strong>Close the mold once</strong> and check that the blue LED flashes.</span></li>
+        </ol>
+        <h4>What the lights tell you</h4>
+        <ul class="leds">
+          <li><i class="g"></i><span>Green LED flashing: searching for the mobile network</span></li>
+          <li><i class="g"></i><span>Green LED on: connected to the mobile network</span></li>
+          <li><i class="b"></i><span>Blue LED flashing: connecting to moldHUB</span></li>
+          <li><i class="b"></i><span>Blue LED on: connected to moldHUB</span></li>
+          <li><i class="r"></i><span>Red LED on: sending data</span></li>
+          <li><i class="b"></i><span>Short blue flash: a cycle was counted</span></li>
+        </ul>
+        <p class="note">No light means normal operation. The device sleeps to save the battery.</p>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact reveal"><h4>Charge by USB-C</h4><p>Connect a USB-C cable and a charger of up to 1 A. A charge typically takes less than 30 minutes.</p></div>
+      <div class="fact reveal" style="--d:.06s"><h4>Read it by NFC</h4><p>Hold a smartphone to the NFC area to read the cycle count, also where there is no mobile network. The value is updated at least once per hour.</p></div>
+      <div class="fact reveal" style="--d:.12s"><h4>Update over USB-C</h4><p>New firmware comes as a file from Männer and is copied to the device over the USB-C port.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT ---------------------------------------------------------------- -->
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <p class="eyebrow">Talk to us</p>
+        <h2 id="contact-title">See moldMIND X with moldHUB on your molds.</h2>
+        <p class="lead">Ask about moldMIND X, moldHUB and how they fit your molds and your plant.</p>
+        <a class="btn btn-primary" href="https://spectrix.com/en/ms-contact" rel="noopener">Contact us
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="https://moldhub.io" rel="noopener">Open moldHUB
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+      <div class="contacts">
+        <div class="contact"><b>Manufacturer</b>Otto Männer GmbH · Bahlingen a.K., Germany</div>
+        <div class="contact"><b>moldHUB</b><a href="https://moldhub.io" rel="noopener">moldhub.io</a></div>
+        <div class="contact"><b>Online</b><a href="https://spectrix.com/en/ms-contact" rel="noopener">Contact form on spectrix.com</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <img src="../assets/img/brand/maenner-by-spectrix-light.png" alt="Männer by SPECTRIX" width="902" height="268">
+      <small>© 2026 SPECTRIX. All rights reserved. moldMIND X and moldHUB are trademarks of their respective owners. Screenshots are captures of moldHUB software 24.8.0 with demonstration data. Features and specifications may change; consult your Männer representative for your configuration.</small>
+    </div>
+    <div>
+      <a href="../">All products</a> · <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot viewer">
+  <div class="lb">
+    <button class="lb-close" type="button" aria-label="Close">✕</button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous screenshot">‹</button>
+    <div class="lb-stage"><img alt="" src=""></div>
+    <button class="lb-btn lb-next" type="button" aria-label="Next screenshot">›</button>
+    <p class="lb-cap"></p>
+  </div>
+</dialog>
+
+<script src="../assets/js/lang.js" defer></script>
+<script src="assets/js/moldmind.js" defer></script>
+</body>
+</html>

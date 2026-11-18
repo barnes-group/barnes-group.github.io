@@ -63,3 +63,11 @@ The screenshots come from `g6p/doc/manual/screenshots/en/en_<name>.png` (1080x19
 - The manual is English only.
 - Content wording on the landing page ("Six strong brands") paraphrases spectrix.com and should be confirmed.
 - All imagery and copy still need approval for external use (acceptance criterion of the ticket).
+
+## moldMIND X + moldHUB page (Männer brand)
+
+- URLs: `/moldmind/`, `/moldmind/de/`, `/moldmind/it/`. Template `scripts/templates/moldmind.html`, assets in `moldmind/assets/`.
+- Colours: SPECTRIX purple with light-blue accent (`#32c5f9` dark theme, `#332882` light), as on the spectrix.com Männer page. Otto Männer's own corporate colour was not found.
+- Screenshots come from the moldHUB and moldMIND X operator manuals (demo data), converted to webp.
+- Open point: the device photo shows the old "BARNES Molding Solutions" label. Replace before wider promotion.
+- Hub tile: `.product--maenner` in `assets/css/hub.css`.
