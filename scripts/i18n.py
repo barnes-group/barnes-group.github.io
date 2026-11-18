@@ -31,6 +31,8 @@ def norm(s):
 
 
 def has_words(s):
+    if s.strip().startswith("{{"):
+        return False
     return bool(WORD.search(re.sub(r"<[^>]+>", " ", s)))
 
 
@@ -51,6 +53,8 @@ def inner(el):
 def walk(soup):
     """Yield ('text', element) and ('attr', element, name) in document order."""
     def visit(el):
+        if el.get("translate") == "no":
+            return
         for name in ATTRS:
             if el.has_attr(name):
                 yield ("attr", el, name)

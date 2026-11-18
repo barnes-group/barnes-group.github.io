@@ -74,12 +74,21 @@ PAGES = {
     "hub": ("", "/"),
     "g25": ("g25", "/g25/"),
 }
-LANGS = ["de"]
+# Add a language: append it here, add its flag below and create scripts/i18n/<code>.json
+LANG_META = {"en": ("English", "GB"), "de": ("Deutsch", "DE")}
+LANGS = [c for c in LANG_META if c != "en"]
+LANG_LABEL = {"en": "Language", "de": "Sprache"}  # accessible name of the dropdown
+FLAGS = {
+    "GB": '<svg viewBox="0 0 60 40" aria-hidden="true"><clipPath id="gb"><rect width="60" height="40" rx="4"/></clipPath><g clip-path="url(#gb)"><rect width="60" height="40" fill="#012169"/><path d="M0 0l60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0l60 40M60 0L0 40" stroke="#C8102E" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="13"/><path d="M30 0v40M0 20h60" stroke="#C8102E" stroke-width="7"/></g></svg>',
+    "DE": '<svg viewBox="0 0 60 40" aria-hidden="true"><clipPath id="de"><rect width="60" height="40" rx="4"/></clipPath><g clip-path="url(#de)"><rect width="60" height="14" fill="#000"/><rect y="13" width="60" height="14" fill="#DD0000"/><rect y="26" width="60" height="14" fill="#FFCE00"/></g></svg>',
+}
 EN_MAILTO = "mailto:info@gammaflux.com?subject=G25%20demo%20request&body=Hello%2C%0A%0AI%20would%20like%20to%20book%20a%20demo%20of%20the%20G25.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0APreferred%20date%3A%0A"
 DE_MAILTO = "mailto:info@gammaflux.de?subject=G25%20Demo-Anfrage&body=Guten%20Tag%2C%0A%0Aich%20m%C3%B6chte%20gerne%20eine%20Demo%20des%20G25%20buchen.%0A%0AName%3A%0AFirma%3A%0ATelefon%3A%0AWunschtermin%3A%0A"
 # German pages link to German versions of the other pages
-DE_LINKS = {"hub": [('href="../g25/"', 'href="../g25/de/"')],
-            "g25": [('href="../../"', 'href="../../de/"')]}
+def lang_links(name, lang):
+    """Links between pages must stay inside the chosen language."""
+    return {"hub": [('href="../g25/"', f'href="../g25/{lang}/"')],
+            "g25": [('href="../../"', f'href="../../{lang}/"')]}.get(name, [])
 
 
 def asset_hash(page_dir, url):
@@ -112,17 +121,30 @@ def prefix_urls(text, prefix="../"):
 
 
 def finalize(text, tpl, lang, folder, path):
-    en_url, de_url = BASE + path, BASE + path + "de/"
-    alt = (f'<link rel="canonical" href="{en_url if lang == "en" else de_url}">'
-           f'<link rel="alternate" hreflang="en" href="{en_url}">'
-           f'<link rel="alternate" hreflang="de" href="{de_url}">'
-           f'<link rel="alternate" hreflang="x-default" href="{en_url}">')
-    redirect = ("<script>try{if(!localStorage.getItem('lang')&&/^de\\b/i.test(navigator.language||''))"
-                "location.replace('de/'+location.hash)}catch(e){}</script>") if lang == "en" else ""
+    url = lambda c: BASE + path + ("" if c == "en" else c + "/")
+    alt = f'<link rel="canonical" href="{url(lang)}">'
+    alt += "".join(f'<link rel="alternate" hreflang="{c}" href="{url(c)}">' for c in LANG_META)
+    alt += f'<link rel="alternate" hreflang="x-default" href="{url("en")}">'
+    codes = json.dumps(LANGS)
+    redirect = ("<script>try{if(!localStorage.getItem('lang')){var l=(navigator.language||'').slice(0,2).toLowerCase();"
+                f"if({codes}.indexOf(l)>-1)location.replace(l+'/'+location.hash)}}}}catch(e){{}}</script>") if lang == "en" else ""
     text = text.replace("<!--LANG_HEAD-->", redirect + alt)
-    hrefs = {"en": ("./", "de/"), "de": ("../", "./")}[lang]
-    text = text.replace("{{lang_en}}", hrefs[0] if lang == "en" else "../").replace("{{lang_de}}", hrefs[1])
-    text = text.replace(f'data-lang="{lang}"', f'data-lang="{lang}" aria-current="true"')
+    items = []
+    for code, (label, flag) in LANG_META.items():
+        if code == lang:
+            href = "./"
+        elif lang == "en":
+            href = f"{code}/"
+        else:
+            href = "../" if code == "en" else f"../{code}/"
+        cur = ' aria-current="true"' if code == lang else ""
+        items.append(f'<li><a href="{href}" hreflang="{code}" lang="{code}" data-lang="{code}" translate="no"{cur}>'
+                     f'<span class="flag">{FLAGS[flag]}</span>{label}</a></li>')
+    cur_flag = FLAGS[LANG_META[lang][1]]
+    chev = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'
+    switch = (f'<details class="lang-switch"><summary aria-label="{LANG_LABEL[lang]}"><span class="flag">{cur_flag}</span>'
+              f'<span class="code" translate="no">{lang.upper()}</span>{chev}</summary><ul>{"".join(items)}</ul></details>')
+    text = text.replace("<!--LANG_SWITCH-->", switch)
     return text
 
 
@@ -144,7 +166,7 @@ def main():
             text = text.replace('<html lang="en"', f'<html lang="{lang}" data-root="../"', 1)
             text = text.replace('data-dec="2">0.05<', 'data-dec="2">0,05<').replace('>0.1 °C (0.2 °F)<', '>0,1 °C (0,2 °F)<')
             text = prefix_urls(text)
-            for a, b in DE_LINKS.get(name, []):
+            for a, b in lang_links(name, lang):
                 text = text.replace(a, b)
             text = finalize(text, name, lang, folder, path)
             lout = page_dir / lang / "index.html"

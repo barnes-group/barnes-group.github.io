@@ -20,6 +20,8 @@ Add further products as top-level folders (for example `/g26/`) and link them fr
 
 ## Language
 
+The language dropdown (flag + code) lists every entry of `LANG_META` in `scripts/build_pages.py`. To add a language: add it to `LANG_META` and `LANG_LABEL`, add its flag to `FLAGS`, and create `scripts/i18n/<code>.json` (start from `python3 scripts/i18n.py dump <code> index.html g25/index.html`). The build then creates `/<code>/` pages and links them everywhere.
+
 Pages exist in English (default) and German. The EN/DE switch is in the header. First-time visitors whose browser language is German are redirected to `/de/`; an explicit choice is remembered in `localStorage` and wins.
 
 ## Update
